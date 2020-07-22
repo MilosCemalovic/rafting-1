@@ -74,9 +74,18 @@ Svim <button>-ovima unutar elementa dodati<a> ... i u <button class="btn--orang
 <section class="booking"> oduzet globalni grid-gap i padding, a naslovu i dugmetu unutar sekcije dodate margine gore i dole
 <section class="gallery"> stavljen je unutar novokreiranog 'roditelja' <section class="gallery-box"> zajedno sa novokreiranim naslovom <h6> i pozicioniran. Element preimenovan u html-u u <div class="gallery"> kome je skinut padding-top
 -------------------------------------------------
+Footer - postavljen logo preko html <picture> elementa u kome se nalaze hmtl <source> i <img> elementi, za manje i vece ekrane, 5 svg ikonca za drustvene mreze preko sprite.svg fajla, koje imaju :hover efekat i 1 paragraf
+
+<picture class="logo--footer">
+  <source media="(max-width: 37.5em)" srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x">
+  <img alt="rafting-1-logo-green" srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" src="img/logo-green-2x.png">
+</picture> 
+
+-------------------------------------------------
 .heading-1  { z-index: 2001; } .navigation &__list { z-index: 2000; }.popup { z-index: 1999; }.story &-pictures &__img:hover { z-index: 5; } .heading-5 &__card { z-index: 2; } .card &__picture { z-index: 1;
 .story &-pictures &__img &--1, &--2 i &--3 { z-index: 1; }  .btn::after { z-index: -1; }.bg-video { z-index: -1; }
 
 
+Srdačan pozdrav,
 Miloš Ćemalović
-milosmiloscemalovicnew@gmail.com / +381 62 327 929 
+milosmiloscemalovicnew@gmail.com / +381 62 327 929
