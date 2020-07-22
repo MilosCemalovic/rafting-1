@@ -67,9 +67,14 @@
   -webkit-clip-path: polygon(0 13%, 100% 0, 100% 87%, 0 100%);
   clip-path: polygon(0 13%, 100% 0, 100% 87%, 0 100%);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(4, minmax(25rem, 1fr));
   grid-gap: 6rem;
   padding: 15rem 6rem;
+
+  @media only screen and (max-width:$bp-1) {
+    grid-template-columns: repeat(4, minmax(15rem, 1fr));
+    grid-gap: 5rem;
+  }
 }
 
 
@@ -79,9 +84,14 @@
   // background-color: $color-green-light;
   grid-column: 1 / -1;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  grid-template-columns: repeat(3, minmax(35rem, 1fr));
   grid-gap: 6rem;
   padding: 6rem;
+
+  @media only screen and (max-width:$bp-1) {
+    grid-template-columns: repeat(3, minmax(25rem, 1fr));
+    grid-gap: 5rem;
+  }
 }
 
 
@@ -187,5 +197,12 @@
     background-image: linear-gradient(105deg, rgba($color-grey-light-2, .9) 0%, rgba($color-grey-light-2, .9) 50%, transparent 50%), url(../img/rafting-1-15.jpg);
     background-size: cover;
     // background-position: center;
+
+    @media only screen and (max-width: $bp-3) {
+      background-image: linear-gradient(to right, rgba($color-grey-light-2, .9), rgba($color-grey-light-2, .9)), url(../img/rafting-1-15.jpg);
+      @include grid-center-7;
+      height: 40rem;
+      width: 65vw;
+    }
   }
 }
