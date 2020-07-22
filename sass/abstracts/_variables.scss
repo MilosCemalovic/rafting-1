@@ -40,11 +40,11 @@ $transition-2: all .5s;
 
 // BREAKPOINTS
 
-$bp-tab-land: 75em; // 1200px
-$bp-tab-port: 56.25em;
+$bp-1: 82.5em; // 1320px
+$bp-2: 75em; // 1200px
+$bp-3: 58.75em; // 940px
 
-// $bp-phone: 37.5em;
-// $bp-tab-port: 56.25em;
-// $bp-tab-land: 75em;
-// $bp-sm-desk: 70em;
-// $bp-big-desk: 112.5em;
+
+// $bp-large: 62.5em;  // 1000px
+// $bp-medium: 50em;   // 800px;
+// $bp-small: 37.5em;  // 600px;
