@@ -1,0 +1,137 @@
+%heading {
+  text-transform: uppercase;
+}
+
+.heading-1 {
+  @extend %heading;
+
+  font-size: 1.4rem;
+  color: $color-green-dark;
+  // color: $color-blue-light;
+  margin-left: 3rem;
+  position: fixed;
+  top: 1.5rem;
+  z-index: 2001;
+}
+
+.heading-3 {
+  @extend %heading;
+
+  grid-row: 2 / 3;
+  @include  grid-center-6;
+  color: $color-grey-light-1;
+  backface-visibility: hidden;
+  // backface-visibility: hidden; - uklanja trzaj teksta na kraju kretanja
+
+  &--main {
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 4rem;
+    animation: moveInLeft 1.5s;
+
+    @media only screen and (max-width: $bp-tab-port) {
+      font-size: 4rem;
+    }
+  }
+
+  &--sub {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 2rem;
+    animation: moveInRight 1.5s;
+
+    @media only screen and (max-width: $bp-tab-port) {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+.heading-4 {
+  @extend %heading;
+  font-size: 1.5rem;
+
+  &--story {
+    color: $color-green-medium;
+  }
+
+  &--popup {
+    color: $color-grey-dark-2;
+  }
+}
+
+.heading-5 {
+  @extend %heading;
+
+  font-size: 2.5rem;
+  font-weight: 300;
+
+
+  &--story {
+    color: $color-grey;
+    font-style: italic;
+  }
+  
+  &__card {
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    position: relative;
+    z-index: 2;
+    align-self: end;
+    justify-self: end;
+    color: $color-white;
+    margin-right: 2rem;
+    margin-bottom: 1.5rem;
+    width: 55%;
+    text-align: right;
+  }
+
+  &__card-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    
+
+    &--1 {
+      background-image: linear-gradient(to right bottom, rgba($color-orange-light, .75), rgba($color-orange-dark, .75));
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right bottom, rgba($color-green-light, .75), rgba($color-green-dark, .75));
+    }
+
+    &--3 {
+      background-image: linear-gradient(to right bottom, rgba($color-blue-light, .75), rgba($color-blue-dark, .75));
+    }
+
+  }
+
+}
+
+.heading-6 {
+  @extend %heading;
+
+  font-size: 4rem;
+
+  &--popup {
+    color: $color-green-medium;
+  }
+
+  &--cards,
+  &--reviews,
+  &--gallery {
+    grid-column: 1 / -1;
+    justify-self: center;
+    color: $color-green-medium;
+  }
+  &--gallery,
+  &--booking {
+    margin: 5rem;
+  }
+
+  &--booking {
+    color: $color-white;
+    line-height: 1;
+  }
+
+  
+}

@@ -1,0 +1,33 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+
+  @media only screen and (max-width: $bp-tab-land) {
+    font-size: 50%;
+  }
+}
+
+body {
+  font-family: $font-primary;
+  font-size: $default-font-size;
+  font-weight: 400;
+  line-height: 1.4;
+  display: grid;
+  grid-template-rows: 5rem calc(100vh - 5rem) 40vw repeat(6, min-content);
+  grid-template-columns: repeat(4, 1fr);
+  // padding:0 3rem 3rem 3rem;
+  background-color: $color-white;
+}
+
+::selection {
+  background-color: $color-green-medium;
+  color: $color-white;
+}

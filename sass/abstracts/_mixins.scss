@@ -1,0 +1,43 @@
+@mixin grid-center-1 {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin grid-center-2 {
+  display: grid;
+  align-content: center;
+  justify-content: center;
+}
+
+@mixin grid-center-3 {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+@mixin grid-center-4 {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+}
+
+@mixin grid-center-5 {
+  display: grid;
+  align-items: center;
+}
+
+@mixin grid-center-6 {
+  display: grid;
+  justify-items: center;
+}
+
+@mixin grid-center-7 {
+  display: grid;
+  align-content: center;
+}
+
+@mixin grid-center-8 {
+  display: grid;
+  justify-content: center;
+}

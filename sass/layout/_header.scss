@@ -1,0 +1,15 @@
+.header {
+  grid-column: 1 / -1;
+  @include grid-center-6;
+  grid-template-rows: 10rem min-content 25rem;
+  background-image: linear-gradient(to right bottom, rgba($color-green-light, 0.8), rgba($color-green-dark, 0.8)),url(../img/rafting-1-1.jpg);
+  // background-image: linear-gradient(to right bottom, rgba($color-blue-light, 0.8), rgba($color-blue-dark, 0.8)),url(../img/rafting-1-1.jpg);
+  background-size: cover;
+  background-position: left;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+
+  &__link {
+    justify-self: start;
+  }
+}

@@ -1,0 +1,50 @@
+// COLORS
+
+$color-white: #fff;
+$color-black: #000;
+
+$color-grey: #777;
+$color-grey-dark-1: #999;
+$color-grey-dark-2: #333;
+$color-grey-light-1: #f7f7f7;
+$color-grey-light-2: #eee;
+
+$color-green-light: #7ed56f;
+$color-green-medium: #55c57a;
+$color-green-dark: #28b485;
+
+$color-orange-light: #ffb900;
+$color-orange-dark: #ff7730;
+
+$color-blue-light: #2998ff;
+$color-blue-dark: #5643fa;
+$color-blue-studio77: #27ccc0;
+
+// FONTS
+
+$font-primary: 'Lato', sans-serif;
+$default-font-size: 1.4rem;
+
+// BOX-SHADOWS
+
+//bx-sw:X-osa Y-osa blur rgba(boja, opacity);
+$bx-sw-1: 0 .7rem 1.1rem rgba($color-black, .1);
+$bx-sw-2: 0 1rem 2rem rgba($color-black, .3);
+$bx-sw-3: 0 .5rem 1rem rgba($color-black, .2);
+$bx-sw-4: 0 3rem 6rem rgba($color-black, .1);
+
+// TRANSITIONS
+
+$transition-1: all .2s;
+$transition-2: all .5s;
+
+// BREAKPOINTS
+
+$bp-tab-land: 75em; // 1200px
+$bp-tab-port: 56.25em;
+
+// $bp-phone: 37.5em;
+// $bp-tab-port: 56.25em;
+// $bp-tab-land: 75em;
+// $bp-sm-desk: 70em;
+// $bp-big-desk: 112.5em;

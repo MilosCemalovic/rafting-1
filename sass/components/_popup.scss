@@ -1,0 +1,61 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh + 5rem);
+  background-color: rgba($color-black, .8);
+  @include grid-center-2;
+  z-index: 1999;
+  visibility: hidden;
+  opacity: 0;
+  transition: $transition-2;
+  -webkit-backdrop-filter: blur(10px); // radi - chrome i edge, ali ne radi - firefox
+  backdrop-filter: blur(10px);
+
+  &:target { // ovo je kliknuti id="#popup"
+    visibility: visible;
+    opacity: 1;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-columns: 25vw 50vw;
+  }
+
+  &__photos {
+    width: 100%;
+    display: block;
+  }
+
+  &__story {
+    @include grid-center-2;
+    grid-gap: 3rem;
+    padding: 0 7vw;
+    background-color: $color-grey-light-1;
+    position: relative;
+  }
+
+  &__close {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    text-decoration: none;
+    color: $color-white;
+    // border: 2px solid $color-green-medium;
+    background-color: $color-green-medium;
+    border-radius: 50%;
+    width: 2.2rem;
+    height: 2.2rem;
+    @include grid-center-1;
+  }
+
+  &__text {
+    column-count: 2;
+    column-gap: 4rem;
+    column-rule: 1px solid $color-grey-dark-1;
+    hyphens: auto;
+    text-align: justify;
+  }
+
+ }

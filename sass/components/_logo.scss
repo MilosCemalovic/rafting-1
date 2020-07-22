@@ -1,0 +1,10 @@
+.logo {
+  height: 4rem;
+  margin: 3rem;
+  cursor: pointer;
+  transition: $transition-1;
+
+  &:hover {
+    transform: translateY(-.3rem);
+  }
+}
