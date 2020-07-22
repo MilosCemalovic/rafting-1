@@ -1,91 +1,223 @@
-Podesena osnovna postavka grida u body-u ovako: display: grid, grid-template-rows: 5rem calc(100vh - 5rem) 40vw repeat(6, min-content), grid-template-columns: repeat(4, 1fr);, kreirane promenljive za COLORS, FONT FAMILY, FONT SIZE, BOX-SHADOWS, TRANSITIONS i BREAKPOINTSi izgled selektovanog teksta na sajtu uz pomoc pseudo elementa ::selection {
-  background-color: $color-green-medium;
-  color: $color-white;
+Projekat je radjen sa naprednim tehnikama CSS-a: CSS Grid i Flexbox preko SASS-a.
+Korisceni tagovi u naslovu i imenima fotografija radi boljeg SEO.
+
+-------------------------------------------------
+
+
+Podesena osnovna postavka grida u body-u ovako: display: grid, grid-template-rows: 5rem calc(100vh - 5rem) 40vw repeat(6, min-content), grid-template-columns: repeat(4, 1fr);, kreirane promenljive za COLORS, FONT FAMILY, FONT SIZE, BOX-SHADOWS, TRANSITIONS i BREAKPOINTS i izgled selektovanog teksta na sajtu uz pomoc pseudo elementa ::selection {
+  background-color: $color-green-medium;
+  color: $color-white;
 }
+
 -------------------------------------------------
-Navigacija - stavljen <h1> kao prvi tekst na .html strani i fiksirana navigacija uz html <h2> unutar <li> element radi boljeg SEO efekta. Celo <li> polje aktivno na klik preko hover-a tehnikom grida. 
+
+Navigacija - stavljen <h1> kao prvi tekst na .html strani i fiksirana navigacija uz html <h2> unutar <li> element radi boljeg SEO efekta. Celo <li> polje aktivno na klik preko hover-a tehnikom grida.
+
 -------------------------------------------------
+
 Header - Kodirane 3 animacije - 2 naslova i 1 dugmeta (@keyframes moveInLeft, @keyframes moveInRight i @keyframes moveInBottom
-), extends - @extend %heading za sve heading-e i logo ima efekat preko hover-a.Korisceni pseudo elementi ::after, pseudo klase :hover, :focus, :active, pa kombinacija &:hover::after{...} i onda nestandardni propertiestransition: $transition-1, clip-path: polygon(), background-image: linear-gradient(to right bottom, rgba($color-green-light, 0.8), rgba($color-green-dark, 0.8)),url(../img/...), background-size: cover, background-position: left; transform: translateY(-.15rem), box-shadow: 0 .5rem 1rem rgba($color-black, .2),  transform: scaleX(1.4) scaleY(1.6), opacity: 0; letter-spacing: 4rem, animation: moveInLeft 1.5s, animation-fill-mode: backwards;
+), extends - @extend %heading za sve heading-e i logo ima efekat preko hover-a. Korisceni pseudo elementi ::after, pseudo klase :hover, :focus, :active, pa kombinacija  &:hover::after{...} i onda nestandardni properties transition: $transition-1, clip-path: polygon(), background-image: linear-gradient(to right bottom, rgba($color-green-light, 0.8), rgba($color-green-dark, 0.8)),url(../img/...), background-size: cover, background-position: left; transform: translateY(-.15rem), box-shadow: 0 .5rem 1rem rgba($color-black, .2),   transform: scaleX(1.4) scaleY(1.6), opacity: 0; letter-spacing: 4rem, animation: moveInLeft 1.5s, animation-fill-mode: backwards;
+
 -------------------------------------------------
-Story pictures - sa srcsetza manje i vece ekrane iskacu sa ramom na hover (treba dodati media za breakpoint/e). Korisceni overflow: hidden, outline: 1.2rem solid $color-green-medium i njegov razmak outline-offset: 1.2rem; box-shadow: $bx-sw-2, transform: scale(1.2), padding: 6rem 6vw 
+
+Story pictures - sa srcset za manje i vece ekrane iskacu sa ramom na hover (treba dodati media za breakpoint/e). Korisceni overflow: hidden, outline: 1.2rem solid $color-green-medium i njegov razmak outline-offset: 1.2rem; box-shadow: $bx-sw-2, transform: scale(1.2), padding: 6rem 6vw
+
 -------------------------------------------------
-Story content - kreirane 3 utility klase ( u posebnom .scss fajlu i taj fajl ukljucen u main.scss) koje su ubacene u index.html, kao i h4 i h5 sa svojim modifikatorima i modifikator dugmeta u zelenu boju sa zelenim pratecim efektima 
+
+Story content - kreirane 3 utility klase ( u posebnom .scss fajlu i taj fajl ukljucen u main.scss ) koje su ubacene u index.html, kao i h4 i h5 sa svojim modifikatorima i modifikator dugmeta u zelenu boju sa zelenim pratecim efektima
+
 -------------------------------------------------
+
 Feature - clip-path: polygon(), sa 4 kartice preko grida, koje imaju po 1 html <svg> element koji u sebi ima html <use> element i gadja .svg fajl preko xlink:href="sprite.svg" fajl, u kome se nalaze sve .svg ikonice neophodne za sajt, 1 h4 sa modifikatorom i 1 paragraf, uz hover i transform: translateY() i scale() i 2 box-shadow stanja (kada je karta dole i kada je gore), grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); Ikonicama data visina, sirina i boja preko fill:...; property-a
+
 -------------------------------------------------
+
 Gallery - grid preko jedinica vw - grid-template-rows: repeat(5, 5vw) i img dovedene u red preko object-fit: cover; width: 100%; height: 100%; Na klik preko pseudo klase :acitve stanja iskacu slike putem transform: translateX(-100%) translateY(50%) scale(2.5) sa ramom outline: 1.2rem solid $color-orange-light;
--------------------------------------------------
-Cards - formirana sekcija koja sadrzi naslov, 3 karte sa po dve strane i dugme. Formirane su velicine dve strane koje su apsoultno postavljene rotiraju za 180* / korisnjeni su transform: rotateY(-180deg), backface-visibility: hidden, box-shadow: $bx-sw-1, border-radius i perspective: 150rem; Uradjena je kompletna zadnja strana preko grida sa 3 elementa i svakoj dodat background-image.Na prednjoj strani je uradjena slika preko css-a background-image uz background-size: cover, background-blend-mode: screen i clip-path: polygon() i naslov koji se lomi uz pomoc box-decoration-break: clone i width: 55%, a pozicionira sa text-align: right;Elementima<div class="card__picture card__picture--1, --2 i --3"> dat je  karakter entiteta reference (character entity reference) &nbsp; koji ne pokazuje nista
--------------------------------------------------
-Booking - uradjena pozadina, sa naslovom, kutijom za formu i dugmetom. Kutiji stavljena pozadinska fotografija uz kosinu i transparentnu polovinu preko background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%), url(../img/rafting-1-15.jpg);Kreirana forma sa html <label> elementom u kome se nalazi <span> element. 
-Slozena 2 input text polja, 2 label input polja, 2 input radio polja, 2 label radio input polja i 2 label span polja preko grid i flex tehnologije. Korisceni pseudo elementi ::after, ::placeholder i  pseudo klase :focus, :focus:invalid, i funkcije &__input:placeholder-shown + &__label-input {...}, &__radio:checked + &__label-radio &__label-radio-button::after {opacity: 1;} i nestandardni properties border-bottom: 3px solid transparent; font-family: inherit, color: inherit; transform: translateY(-4rem); opacity: 0; visibility: hidden;
-Kreirane @mixin funkcije (u posebnom .scss fajlu i taj fajl ukljucen u main.scss) i implementirane u sve prethone fajlove na odgovarajuca mesta. 
 
 -------------------------------------------------
 
-Reviews - kreiran pozadinski video (backgroud-video) kroz html, ovako<div class="bg-video">
-  <video class="bg-video__content" autoplay muted loop>
-    <source src="img/video.mp4" type="video/mp4">
-    <source src="img/video.webm" type="video/webm">
-    Your video is not supported!
-  </video>
+Cards - formirana sekcija koja sadrzi naslov, 3 karte sa po dve strane i dugme. Formirane su velicine dve strane koje su apsoultno postavljene rotiraju za 180* / korisnjeni su transform: rotateY(-180deg), backface-visibility: hidden, box-shadow: $bx-sw-1, border-radius i perspective: 150rem; Uradjena je kompletna zadnja strana preko grida sa 3 elementa i svakoj dodat background-image.
+Na prednjoj strani je uradjena slika preko css-a background-image uz background-size: cover, background-blend-mode: screen i clip-path: polygon() i naslov koji se lomi uz pomoc box-decoration-break: clone i width: 55%, a pozicionira sa text-align: right;
+Elementima <div class="card__picture card__picture--1, --2 i --3"> dat je  karakter entiteta reference (character entity reference) &nbsp; koji ne pokazuje nista
+
+-------------------------------------------------
+
+Booking - uradjena pozadina, sa naslovom, kutijom za formu i dugmetom. Kutiji stavljena pozadinska fotografija uz kosinu i transparentnu polovinu preko background-image: linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%), url(../img/rafting-1-15.jpg);
+Kreirana forma sa html <label> elementom u kome se nalazi <span> element.
+Slozena 2 input text polja, 2 label input polja, 2 input radio polja, 2 label radio input polja i 2 label span polja preko grid i flex tehnologije. Korisceni pseudo elementi ::after, ::placeholder i  pseudo klase :focus, :focus:invalid, i funkcije &__input:placeholder-shown + &__label-input {...}, &__radio:checked + &__label-radio &__label-radio-button::after {opacity: 1;} i nestandardni properties border-bottom: 3px solid transparent; font-family: inherit, color: inherit; transform: translateY(-4rem); opacity: 0; visibility: hidden;
+
+Kreirane @mixin funkcije (u posebnom .scss fajlu i taj fajl ukljucen u main.scss) i implementirane u sve prethone fajlove na odgovarajuca mesta.
+
+-------------------------------------------------
+
+Reviews - kreiran pozadinski video (backgroud-video) kroz html, ovako
+<div class="bg-video">
+  <video class="bg-video__content" autoplay muted loop>
+    <source src="img/video.mp4" type="video/mp4">
+    <source src="img/video.webm" type="video/webm">
+    Your video is not supported!
+  </video>
 </div>
-U ovoj sekciji kreirani su naslov, 2 review elementa i <button> element u sebi ima 2 <span> elementa, koji su pozicionirani preko grida. 
 
-Svaki review element je oblikovan preko clip-path: polygon() u css-u, u kome se nalaze html <figure> element koji u sebi sadrzi <img srcset="img/rafting-1-17-small.jpg 300w, img/rafting-1-17-large.jpg 1000w"> za slike za vece i manje rezolucije i <figcaption> za ime i <div> koji u sebi sadrzi POSTOJECI<h4> i <p>. <figure> elementuje u css-u dat kruzni oblik kroz clip-path: circle(50% at 50% 50%) i zadat shape-outside: circle(50% at 50% 50%) kako bi sadrzaj<div>elementa pratio oblik slike.
-<button class="btn--orange"> elementu data POSTOJECAanimacija animation: pulsate 2.5s infinite; i background-image: linear-gradient(); On u sebi sadrzi modifikatore <span class="btn--orange-invisible"> i <span class="btn--orange-visible">
-<span class="btn--orange-invisible">  element je pozicioniran position: absolute; i oduzet mu je padding sa obe strane - padding: 2rem 0; - kako bi tekst mogao da stane u <button> element. Da podsetim <button> element je imao padding: 2rem 7rem;
+U ovoj sekciji kreirani su naslov, 2 review elementa i <button> element u sebi ima 2 <span> elementa, koji su pozicionirani preko grida.
+
+Svaki review element je oblikovan preko clip-path: polygon() u css-u, u kome se nalaze html <figure> element koji u sebi sadrzi <img srcset="img/rafting-1-17-small.jpg 300w, img/rafting-1-17-large.jpg 1000w"> za slike za vece i manje rezolucije i <figcaption> za ime i <div> koji u sebi sadrzi POSTOJECI <h4> i <p>. <figure> elementu je u css-u dat kruzni oblik kroz clip-path: circle(50% at 50% 50%) i zadat shape-outside: circle(50% at 50% 50%) kako bi sadrzaj <div>elementa pratio oblik slike.
+
+<button class="btn--orange"> elementu data POSTOJECA animacija animation: pulsate 2.5s infinite; i background-image: linear-gradient(); On u sebi sadrzi modifikatore <span class="btn--orange-invisible"> i <span class="btn--orange-visible">
+
+<span class="btn--orange-invisible">  element je pozicioniran position: absolute; i oduzet mu je padding sa obe strane - padding: 2rem 0; - kako bi tekst mogao da stane u <button> element. Da podsetim  <button> element je imao padding: 2rem 7rem;
+
 Na :hover
+
 <figcaption> se pojavljuje preko opacity: 1; i transform: translate(-50%, -50%); na sredinu <img>, a
 <img> se zamucuje, pomera i umanjuje preko filter: blur() brightness() i transform: translateX() scale()
-<button class="btn--orange"> menja background-image: linear-gradient(); 
+
+<button class="btn--orange"> menja background-image: linear-gradient();
 
 <span class="btn--orange-invisible"> se uz pomoc top: 0; pozicionira na sredinu <button class="btn--orange"> elementa
+
 <span class="btn--orange-visible"> se uz pomoc transform: translateY(250%); spusta ispod <button class="btn--orange"> elementa
-Elementima <span>-a dati transition: $transition-2; a <button>-u dat overflow: hidden; kako bi uklonio <span>-ove koji su u datim momentima (pre i posle :hover-a)van<button> elementa
-Kreirane dve animacije 'sa zadrskom' animation: invisible 20s infinite 3s; i animation: visible 20s infinite 3s; koje ce biti aktivirane u @media za mobilne uredjaje 
+
+Elementima <span>-a dati transition: $transition-2; a <button>-u dat overflow: hidden; kako bi uklonio <span>-ove koji su u datim momentima (pre i posle :hover-a) van <button> elementa
+
+Kreirane dve animacije 'sa zadrskom' animation: invisible 20s infinite 3s; i animation: visible 20s infinite 3s; koje ce biti aktivirane u @media za mobilne uredjaje
 
 -------------------------------------------------
 
-Konstatovano je da box-shadow NE RADI kada je clip-path aktivan.Konstatovano je dashape-outside: circle() NE RADI kada je display: grid ili display: flex aktivan vec element MORAimati float: left;Konstatovano je datransform: ; radi SAMO ako je objekat definisan kao display:block. Takodje kada stavimo da je roditelj elementa display:grid, on tretira 'decu' kao blokove i u tom slucaju takodje radi
-Dodat backface-visibility: hidden; u <img>i <figcaption> kako bi uklanio trzaj teksta na kraju kretanja
--------------------------------------------------
-Popup - <div class="popup" id="popup"> elementu dati position: fixed; height: calc(100vh + 5rem); @include grid-center-2; z-index: 1999; visibility: hidden; opacity: 0; transition: $transition-2; -webkit-backdrop-filter: blur(10px);  i backdrop-filter: blur(10px); gde element postaje vidljiv (kad se klikne na id="#popup") preko
+Konstatovano je da box-shadow NE RADI kada je clip-path aktivan.
+Konstatovano je da shape-outside: circle () NE RADI kada je display: grid ili display: flex aktivan vec element MORA imati float: left;
+Konstatovano je da transform: ; radi SAMO ako je objekat definisan kao display:block. Takodje kada stavimo da je roditelj elementa display:grid, on tretira 'decu' kao blokove i u tom slucaju takodje radi
+Dodat backface-visibility: hidden; u  <img> i  <figcaption> kako bi uklanio trzaj teksta na kraju kretanja
 
-&:target { 
-    visibility: visible;
-    opacity: 1;
-  }
+-------------------------------------------------
+
+Popup - <div class="popup" id="popup"> elementu dati position: fixed; height: calc(100vh + 5rem); @include grid-center-2; z-index: 1999; visibility: hidden; opacity: 0; transition: $transition-2; -webkit-backdrop-filter: blur(10px);  i backdrop-filter: blur(10px); gde element postaje vidljiv (kad se klikne na id="#popup") preko
+
+&:target {
+    visibility: visible;
+    opacity: 1;
+  }
 
 backdrop-filter RADI- Chrome i Edge, ali NE RADI - Firefox
-  
+ 
 U njemu se nalazi element <div class="popup__content"> kome je dat display: grid; i grid-template-columns: 25vw 50vw; kako bi 'decu' podelio na 2 definisana dela.
+
 Fotofrafije u prvom 'delu' pozivane su preko srcset-a za manje i vece ekrane <img srcset="img/rafting-1-17-small.jpg 300w, img/rafting-1-17-large.jpg 1000w" alt="Rafting-1 image 17" class="popup__photos popup__photos--1" src="img/rafting-1-17-large.jpg">
-Elementu <a class="popup__close"> dat je  karakter entiteta reference (character entity reference) &times; koji pokazuje X za gasenje prozora, koji je pozicioniran position: absolute;
+
+Elementu <a class="popup__close"> dat je  karakter entiteta reference (character entity reference) &times; koji pokazuje X za gasenje prozora, koji je pozicioniran position: absolute;
+
 Elementu <p class="popup__text"> zadati column-count: 2; column-gap: 4rem; column-rule: 1px solid $color-grey-dark-1; hyphens: auto; i text-align: justify;
 
 -------------------------------------------------
+
 Dodati id="..." - jevi na odredjene sekcije
-Svim <a> (u navigaviji i dugmicima) dodate putanje <a href="#..."> ka tim sekcijama
-Svim <button>-ovima unutar elementa dodati<a> ... i u <button class="btn--orange"><span>-ove takodje
-<button> i <a> elementima dodat display:grid; kako bi celo dugme bilo aktivno, a ne samo slova od<a> 
+
+Svim <a> (u navigaviji i dugmicima) dodate putanje  <a href="#..."> ka tim sekcijama
+
+Svim <button>-ovima unutar elementa dodati <a> ... i u  <button class="btn--orange"><span>-ove takodje
+
+<button> i <a> elementima dodat display:grid; kako bi celo dugme bilo aktivno, a ne samo slova od <a>
 
 <section class="booking"> oduzet globalni grid-gap i padding, a naslovu i dugmetu unutar sekcije dodate margine gore i dole
-<section class="gallery"> stavljen je unutar novokreiranog 'roditelja' <section class="gallery-box"> zajedno sa novokreiranim naslovom <h6> i pozicioniran. Element preimenovan u html-u u <div class="gallery"> kome je skinut padding-top
+
+<section class="gallery"> stavljen je unutar novokreiranog 'roditelja' <section class="gallery-box"> zajedno sa novokreiranim naslovom <h6> i pozicioniran. Element preimenovan u html-u u <div class="gallery"> kome je skinut padding-top
+
 -------------------------------------------------
+
 Footer - postavljen logo preko html <picture> elementa u kome se nalaze hmtl <source> i <img> elementi, za manje i vece ekrane, 5 svg ikonca za drustvene mreze preko sprite.svg fajla, koje imaju :hover efekat i 1 paragraf
 
 <picture class="logo--footer">
-  <source media="(max-width: 37.5em)" srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x">
-  <img alt="rafting-1-logo-green" srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" src="img/logo-green-2x.png">
-</picture> 
+  <source media="(max-width: 37.5em)" srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x">
+  <img alt="rafting-1-logo-green" srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" src="img/logo-green-2x.png">
+</picture>
 
 -------------------------------------------------
-.heading-1  { z-index: 2001; } .navigation &__list { z-index: 2000; }.popup { z-index: 1999; }.story &-pictures &__img:hover { z-index: 5; } .heading-5 &__card { z-index: 2; } .card &__picture { z-index: 1;
-.story &-pictures &__img &--1, &--2 i &--3 { z-index: 1; }  .btn::after { z-index: -1; }.bg-video { z-index: -1; }
 
+.heading-1  { z-index: 2001; } .navigation &__list { z-index: 2000; } .popup { z-index: 1999; } .story &-pictures &__img:hover { z-index: 5; } .heading-5 &__card { z-index: 2; } .card &__picture { z-index: 1;
+.story &-pictures &__img &--1, &--2 i &--3 { z-index: 1; }  .btn::after { z-index: -1; } .bg-video { z-index: -1; }
 
-Srdačan pozdrav,
-Miloš Ćemalović
-milosmiloscemalovicnew@gmail.com / +381 62 327 929
+-------------------------------------------------
+
+Dodat
+
+js folder
+u index.html <script src="js/smooth-scroll.js">
+fajl smooth-scroll.js u js folder
+
+-------------------------------------------------
+
+MEDIA QUERY
+
+variables.scss
+
+$bp-1: 82.5em; // 1320px
+$bp-2: 75em; // 1200px
+$bp-3: 58.75em; // 940px
+
+------------------------------
+
+form.scss
+
+.form &__label &-radio
+@media only screen and (max-width:$bp-1)
+  font-size: 1.2rem;
+
+.form &__label &-radio--1
+@media only screen and (max-width: $bp-3)
+  width: 100%;
+  grid-column: 1 / 3;
+
+.form &__label &-radio--2
+@media only screen and (max-width: $bp-3)
+  width: 100%;
+  grid-column: 3 / 5;
+
+.form &__input &--1, &--2
+grid-column: 1 / 3;
+@media only screen and (max-width: $bp-3)
+  width: 100%;
+  grid-column: 1 / 4;
+
+.form
+@media only screen and (max-width: $bp-3)
+  grid-gap: 1rem;
+
+.form &__label &-input
+@media only screen and (max-width: $bp-3)
+  transform: translateY(-1rem);
+
+.form &__input:placeholder-shown + &__label-input
+@media only screen and (max-width: $bp-3)
+  transform: translateY(-4rem);
+
+------------------------------
+
+home.scss
+
+.cards
+@media only screen and (max-width:$bp-1)
+  grid-template-columns: repeat(3, minmax(25rem, 1fr));
+  grid-gap: 5rem;
+
+.features
+@media only screen and (max-width:$bp-1)
+  grid-template-columns: repeat(4, minmax(15rem, 1fr));
+  grid-gap: 5rem;
+
+.booking &__box
+@media only screen and (max-width: $bp-3) {
+  background-image: linear-gradient(to right, rgba($color-grey-light-2, .9), rgba($color-grey-light-2, .9)), url(../img/rafting-1-15.jpg);
+  @include grid-center-7;
+  height: 40rem;
+  width: 65vw;
+
+------------------------------
+
+base.scss
+
+html
+@media only screen and (max-width: $bp-2)
+  font-size: 50%;
+
+------------------------------
+
