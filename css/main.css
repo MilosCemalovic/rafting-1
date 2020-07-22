@@ -667,7 +667,6 @@ body {
 .logo--header {
   height: 4rem;
   margin: 3rem;
-  cursor: pointer;
 }
 
 .logo--footer {
@@ -677,6 +676,7 @@ body {
 
 .logo--header, .logo--footer {
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 .logo--header:hover, .logo--footer:hover {
@@ -837,6 +837,7 @@ body {
   width: 4rem;
   height: 4rem;
   margin-top: 5rem;
+  cursor: pointer;
   transition: all 0.2s;
 }
 
