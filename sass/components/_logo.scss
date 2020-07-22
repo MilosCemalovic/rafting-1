@@ -3,7 +3,6 @@
   &--header {
     height: 4rem;
     margin: 3rem;
-    cursor: pointer;
   }
 
   &--footer {
@@ -15,6 +14,7 @@
   &--footer {
     
     transition: $transition-2;
+    cursor: pointer;
 
     &:hover {
       transform: translateY(-.3rem);
