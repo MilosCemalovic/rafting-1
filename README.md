@@ -1,2 +1,5 @@
 # rafting-1
-Izmisljeni sajt za rafting na Tari. Radjeno preko sass, grid, flex i float
+Projekat je radjen sa naprednim tehnikama CSS-a: CSS Grid i Flexbox preko SASS-a
+Sajt NE POSEDUJE js
+Korisceni razni tagovi u naslovu i imenima fotografija radi boljeg SEO
+Koriscene svg ikonice i sprite.svg umesto .jpg i .png radi brzeg ucitavanja sajta
