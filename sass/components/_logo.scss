@@ -1,8 +1,9 @@
 .logo {
 
   &--header {
-    height: 4rem;
     margin: 3rem;
+    width: 9rem;
+    height: 9rem;
   }
 
   &--footer {
@@ -13,7 +14,7 @@
   &--header,
   &--footer {
     
-    transition: $transition-2;
+    transition: $transition-1;
     cursor: pointer;
 
     &:hover {

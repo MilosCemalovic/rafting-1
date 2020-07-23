@@ -5,8 +5,29 @@
   width: 75%;
   -webkit-clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
   clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+// box-shadow: $bx-sw-4; - box-shadow NE RADI kada je clip-path 
 
-  // box-shadow: $bx-sw-4; - box-shadow NE RADI kada je clip-path 
+  @media only screen and (max-width: $bp-3) {
+    padding: 3rem 12rem;
+  } 
+
+  @media only screen and (max-width: $bp-3-5) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    padding: 3rem 5rem;
+  } 
+
+  @media only screen and (max-width: $bp-4) {
+    hyphens: none;
+  }
+
+  &__story {    
+
+    @media only screen and (max-width: $bp-4) {
+      @include grid-center-6;
+      grid-gap: 3rem;
+    }
+  }
 
   &__shape {
     width: 15rem;
@@ -72,5 +93,40 @@
     }
     
   }
+
+  &:active &__caption {
+    @media only screen and (max-width: $bp-3) {
+      opacity: 1;
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &:active &__img {
+    @media only screen and (max-width: $bp-3) {
+      filter: blur(.3rem) brightness(95%);
+
+      &--1 {
+        transform: translateX(-6rem) scale(1);
+      }
+
+      &--2 {
+        transform: scale(1);
+      }
+    }
+    
+  }
+
+  &__text {
+
+    @media only screen and (max-width: $bp-3) {
+      hyphens: auto;
+    }
+
+    @media only screen and (max-width: $bp-4) {
+      text-align: justify;
+    }
+  }
   
 }
+
+

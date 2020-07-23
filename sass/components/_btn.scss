@@ -14,6 +14,14 @@
     display: grid;
     text-decoration: none;
     padding: 2rem 7rem;
+
+    @media only screen and (max-width: $bp-3) {
+      padding: 1.75rem 5rem;
+    }
+
+    @media only screen and (max-width: $bp-4) {
+      padding: 1.55rem 3.5rem;
+    }
   }
 
   &--white {
@@ -80,6 +88,17 @@
     outline: none;
     transform: translateY(-.15rem);
     box-shadow: 0 .5rem 1rem rgba($color-black, .2);
+
+    @media only screen and (max-width: $bp-3) {
+      
+      transform: translateY(-.3rem);
+      box-shadow: $bx-sw-2;
+    
+      &::after {
+        transform: scaleX(1.4) scaleY(1.6);
+        opacity: 0;
+      }
+    }
   }
 
   &--cards {
@@ -109,7 +128,10 @@
       width: 100%;
       height: 100%;
       transition: $transition-2;
-      // animation: invisible 20s infinite 3s; ovo ubacujemo na tab-land: 75em; // 1200px
+
+      @media only screen and (max-width: $bp-3) {
+        animation: invisible 20s infinite 3s;
+      }
 
       a:link,
       a:visited {
@@ -117,12 +139,24 @@
         text-decoration: none;
         padding: 2rem 0;
         color: $color-white;
+
+        @media only screen and (max-width: $bp-3) {
+          padding: 1.75rem 0;
+        }
+    
+        @media only screen and (max-width: $bp-4) {
+          padding: 1.55rem 0;
+          font-size: 1.25rem;
+        }
       }
     }
 
     &-visible {
       transition: $transition-2;
-      // animation: visible 20s infinite 3s; ovo ubacujemo na tab-land: 75em; // 1200px
+
+      @media only screen and (max-width: $bp-3) {
+        animation: visible 20s infinite 3s;
+      }
 
       a:link,
       a:visited {
@@ -130,6 +164,14 @@
         text-decoration: none;
         padding: 2rem 7rem;
         color: $color-white;
+
+        @media only screen and (max-width: $bp-3) {
+          padding: 1.75rem 5rem;
+        }
+    
+        @media only screen and (max-width: $bp-4) {
+          padding: 1.55rem 3.5rem;
+        }
       }
     }
 
@@ -139,8 +181,8 @@
 
     &:hover &-visible {
       transform: translateY(250%);
-// transform: ; - radi SAMO ako je objekat definisan kao display:block. Kada stavimo da je roditelj display:grid, on tretira 'decu' kao blokove
     }
+// transform: ; - radi SAMO ako je objekat definisan kao display:block. Kada stavimo da je roditelj display:grid, on tretira 'decu' kao blokove
   }
 
   &--popup {
