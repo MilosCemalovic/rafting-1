@@ -25,6 +25,10 @@ body {
   grid-template-columns: repeat(4, 1fr);
   // padding:0 3rem 3rem 3rem;
   background-color: $color-white;
+
+  @media only screen and (max-width: $bp-3) {
+    grid-template-rows: 5rem calc(100vh - 5rem);
+  }
 }
 
 ::selection {

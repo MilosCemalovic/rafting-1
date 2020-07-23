@@ -21,7 +21,7 @@
   @include  grid-center-6;
   color: $color-grey-light-1;
   backface-visibility: hidden;
-  // backface-visibility: hidden; - uklanja trzaj teksta na kraju kretanja
+// backface-visibility: hidden; - uklanja trzaj teksta na kraju kretanja
 
   &--main {
     font-size: 6rem;
@@ -29,8 +29,8 @@
     letter-spacing: 4rem;
     animation: moveInLeft 1.5s;
 
-    @media only screen and (max-width: $bp-tab-port) {
-      font-size: 4rem;
+    @media only screen and (max-width: $bp-4) {
+      font-size: 3rem;
     }
   }
 
@@ -40,7 +40,7 @@
     letter-spacing: 2rem;
     animation: moveInRight 1.5s;
 
-    @media only screen and (max-width: $bp-tab-port) {
+    @media only screen and (max-width: $bp-4) {
       font-size: 1.5rem;
     }
   }
@@ -57,6 +57,10 @@
   &--popup {
     color: $color-grey-dark-2;
   }
+
+  &--reviews {
+    text-align: center;
+  }
 }
 
 .heading-5 {
@@ -64,6 +68,10 @@
 
   font-size: 2.5rem;
   font-weight: 300;
+
+  @media only screen and (max-width: $bp-4) {
+    font-size: 1.85rem;
+  }
 
 
   &--story {
@@ -111,6 +119,14 @@
   @extend %heading;
 
   font-size: 4rem;
+
+  @media only screen and (max-width: $bp-3) {
+    font-size: 3.25rem;
+  }
+
+  @media only screen and (max-width: $bp-4) {
+    font-size: 2.5rem;
+  }
 
   &--popup {
     color: $color-green-medium;
