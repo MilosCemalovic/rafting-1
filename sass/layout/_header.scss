@@ -9,6 +9,16 @@
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
 
+  @media only screen and (max-width: $bp-3) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+
+  @media only screen and (max-width: $bp-3-5) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+  }
+
   &__link {
     justify-self: start;
   }

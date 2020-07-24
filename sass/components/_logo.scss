@@ -4,11 +4,31 @@
     margin: 3rem;
     width: 9rem;
     height: 9rem;
+
+    @media only screen and (max-width: $bp-3-5) {
+      margin: 2rem;
+      width: 5rem;
+      height: 5rem;
+    }
   }
 
   &--footer {
     grid-column: 1 / -1;
     margin-bottom: 5rem;
+
+    @media only screen and (max-width: $bp-3-5) {
+      margin-bottom: 0;
+    }
+
+    &-1 {
+      width: 50rem;
+      height: 50rem;
+    }
+
+    &-2 {
+      width: 15rem;
+      height: 15rem;
+    }
   }
 
   &--header,

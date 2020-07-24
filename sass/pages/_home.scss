@@ -121,9 +121,32 @@
   grid-gap: 6rem;
   padding: 15rem 6rem;
 
-  @media only screen and (max-width:$bp-1) {
+  @media only screen and (max-width: $bp-1) {
     grid-template-columns: repeat(4, minmax(15rem, 1fr));
     grid-gap: 5rem;
+  }
+
+  @media only screen and (max-width: $bp-3) {
+    grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+    padding: 15rem 5rem;
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  }
+
+  @media only screen and (max-width: $bp-3-3) {
+    grid-gap: 8rem;
+  }
+
+  @media only screen and (max-width: $bp-3-5) {
+    -webkit-clip-path: polygon(0 2.5%, 100% 0, 100% 97.5%, 0 100%);
+    clip-path: polygon(0 2.5%, 100% 0, 100% 97.5%, 0 100%);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    padding: 15rem 5vw;
+  }
+
+  @media only screen and (max-width: $bp-4) {
+    grid-gap: 5rem;
+    padding: 10rem 5vw;
   }
 }
 
@@ -141,6 +164,16 @@
   @media only screen and (max-width:$bp-1) {
     grid-template-columns: repeat(3, minmax(25rem, 1fr));
     grid-gap: 5rem;
+  }
+
+  @media only screen and (max-width: $bp-3) {
+    grid-template-columns: repeat(auto-fit, minmax(55rem, 1fr));
+    padding: 25rem 5rem;
+  }
+
+  @media only screen and (max-width: $bp-5) {
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    padding: 5rem 5vw;
   }
 }
 
@@ -264,6 +297,10 @@
       @include grid-center-7;
       height: 40rem;
       width: 65vw;
+    }
+
+    @media only screen and (max-width: $bp-4) {
+      height: 30rem;
     }
   }
 }

@@ -5,15 +5,16 @@
   width: 75%;
   -webkit-clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
   clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
-// box-shadow: $bx-sw-4; - box-shadow NE RADI kada je clip-path 
+// box-shadow: $bx-sw-4; - box-shadow NE RADI kada je clip-path aktivan
 
   @media only screen and (max-width: $bp-3) {
     padding: 3rem 12rem;
   } 
 
   @media only screen and (max-width: $bp-3-5) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    -webkit-clip-path: none;
+    clip-path: none; // deaktiviram clip-path da bi ukljucio box-shadow
+    box-shadow: $bx-sw-4;
     padding: 3rem 5rem;
   } 
 
@@ -38,7 +39,11 @@
     -webkit-shape-outside: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%); // sluzi da dozvoli tekstu da ide oko ovog elementa
     transform: translateX(-1.5rem);
-    position: relative;
+    position: relative;  
+
+    @media only screen and (max-width: $bp-4) {
+      transform: translateX(0);
+    }
   }
 
   &__img {

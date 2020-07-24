@@ -130,7 +130,7 @@
       transition: $transition-2;
 
       @media only screen and (max-width: $bp-3) {
-        animation: invisible 20s infinite 3s;
+        animation: invisible 10s infinite 1.5s;
       }
 
       a:link,
@@ -155,7 +155,7 @@
       transition: $transition-2;
 
       @media only screen and (max-width: $bp-3) {
-        animation: visible 20s infinite 3s;
+        animation: visible 10s infinite 1.5s;
       }
 
       a:link,
@@ -187,6 +187,10 @@
 
   &--popup {
     justify-self: start;
+
+    @media only screen and (max-width: $bp-3) {
+      justify-self: center;
+    }     
   }
 
   &--booking {

@@ -16,5 +16,24 @@
   &:hover {
     transform: translateY(-.5rem) scale(1.1);
     box-shadow: $bx-sw-2;
+
+    @media only screen and (max-width: $bp-3) {
+      transform: translateY(-.2rem) scale(1.05);
+    }
+
+    @media only screen and (max-width: $bp-3-5) {
+      transform: translateY(-.15rem) scale(1.03);
+    }
+  }
+
+  &:active  {
+    @media only screen and (max-width: $bp-3) {
+      box-shadow: $bx-sw-2;  
+      transform: translateY(-.2rem) scale(1.05);
+    }
+
+    @media only screen and (max-width: $bp-3-5) {
+      transform: translateY(-.15rem) scale(1.03);
+    }
   }
 }

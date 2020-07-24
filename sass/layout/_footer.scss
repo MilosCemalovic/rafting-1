@@ -6,6 +6,10 @@
   grid-template-columns: repeat(2, 1fr);
   padding: 5rem;
 
+  @media only screen and (max-width: $bp-3-5) {
+    grid-template-rows: repeat(3, min-content);
+  }
+
   &__social {
     grid-column: 1 / 2;
     width: 70%;
@@ -16,6 +20,11 @@
     // justify-content: space-around;
     // padding: 5rem;
     border-top: 1px solid $color-grey-light-1;
+
+    @media only screen and (max-width: $bp-3-5) {
+      grid-row: 3 / 4;
+      grid-column: 1 / -1;
+    }
   }
 
   &__icon {
@@ -38,5 +47,10 @@
     border-top: 1px solid $color-grey-light-1;
     width: 70%;
     padding: 2rem;
+
+    @media only screen and (max-width: $bp-3-5) {
+      grid-row: 2 / 3;
+      grid-column: 1 / -1;
+    }
   }
 }
