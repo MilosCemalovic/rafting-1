@@ -1,3 +1,7 @@
+Projekat je radjen sa naprednim CSS tehnikama: CSS Grid i Flexbox preko CSS predprocesora SASS. Sajt NE POSEDUJE js!!! Dodat js folder sa smooth-scroll.js, ali se ne koristi, jer onemogucava rad #popup sekcije. Zakomentarisan je poziv <script src="js/smooth-scroll.js"> funkcije u index.html. Korisceni razni tagovi u naslovu i imenima fotografija radi boljeg SEO. Koriscene svg ikonice i sprite.svg umesto .jpg i .png radi brzeg ucitavanja sajta.
+
+-------------------------------------------------
+
 Podesena osnovna postavka grida u body-u ovako: display: grid, grid-template-rows: 5rem calc(100vh - 5rem) 40vw repeat(6, min-content), grid-template-columns: repeat(4, 1fr);, kreirane promenljive za COLORS, FONT FAMILY, FONT SIZE, BOX-SHADOWS, TRANSITIONS i BREAKPOINTSi izgled selektovanog teksta na sajtu uz pomoc pseudo elementa ::selection {
   background-color: $color-green-medium;
   color: $color-white;
@@ -61,7 +65,9 @@ Popup - <div class="popup" id="popup"> elementu dati position: fixed; height: ca
 backdrop-filter RADI- Chrome i Edge, ali NE RADI - Firefox
   
 U njemu se nalazi element <div class="popup__content"> kome je dat display: grid; i grid-template-columns: 25vw 50vw; kako bi 'decu' podelio na 2 definisana dela.
-Fotofrafije u prvom 'delu' pozivane su preko srcset-a za manje i vece ekrane <img srcset="img/rafting-1-17-small.jpg 300w, img/rafting-1-17-large.jpg 1000w" alt="Rafting-1 image 17" class="popup__photos popup__photos--1" src="img/rafting-1-17-large.jpg">
+Fotofrafije u prvom 'delu' pozivane su preko srcset-a za manje i vece ekrane 
+<img srcset="img/rafting-1-17-small.jpg 300w, img/rafting-1-17-large.jpg 1000w" alt="Rafting-1 image 17" class="popup__photos popup__photos--1" src="img/rafting-1-17-large.jpg">
+
 Elementu <a class="popup__close"> dat je  karakter entiteta reference (character entity reference) &times; koji pokazuje X za gasenje prozora, koji je pozicioniran position: absolute;
 Elementu <p class="popup__text"> zadati column-count: 2; column-gap: 4rem; column-rule: 1px solid $color-grey-dark-1; hyphens: auto; i text-align: justify;
 
@@ -77,8 +83,8 @@ Svim <button>-ovima unutar elementa dodati<a> ... i u <button class="btn--orang
 Footer - postavljen logo preko html <picture> elementa u kome se nalaze hmtl <source> i <img> elementi, za manje i vece ekrane, 5 svg ikonca za drustvene mreze preko sprite.svg fajla, koje imaju :hover efekat i 1 paragraf
 
 <picture class="logo--footer">
-  <source media="(max-width: 37.5em)" srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x">
-  <img alt="rafting-1-logo-green" srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" src="img/logo-green-2x.png">
+  <source media="(max-width: 51.5em)" srcset="img/logo-1-rafting.svg 1x, img/logo-1-rafting.png 2x" class="logo--footer-1">
+  <img alt="rafting-2-logo-green" srcset="img/logo-2-rafting.svg 1x, img/logo-2-2-rafting.svg 2x" src="img/logo-2-2-rafting.svg" class="logo--footer-2">
 </picture> 
 -------------------------------------------------
 .heading-1  { z-index: 2001; } .navigation &__list { z-index: 2000; }.popup { z-index: 1999; }.story &-pictures &__img:hover { z-index: 5; } .heading-5 &__card { z-index: 2; } .card &__picture { z-index: 1;
@@ -88,13 +94,16 @@ Dodat js folder sa smooth-scroll.js, ali se ne koristi, jer onemogucava rad #pop
 Zakomentarisani u index.html <script src="js/smooth-scroll.js">
 -------------------------------------------------
 MEDIA QUERY
+
 variables.scss
 
 $bp-1: 82.5em; // 1320px
 $bp-2: 75em; // 1200px
 $bp-3: 58.75em; // 940px
+$bp-3-3: 51.75em; // 828px
 $bp-3-5: 51.5em; // 824px
 $bp-4: 40em; // 640px
+$bp-5: 30.25em; // 484px
 
 ------------------------------
 
@@ -103,6 +112,11 @@ form.scss
 .form 
 @media only screen and (max-width: $bp-3)
   grid-gap: 1rem;
+
+@media only screen and (max-width: $bp-5)
+  grid-template-rows: repeat(6, min-content);
+  padding: 2rem;
+
 
 .form &__label &-radio 
 @media only screen and (max-width:$bp-1) 
@@ -113,18 +127,31 @@ form.scss
   width: 100%;
   grid-column: 1 / 3;
 
+@media only screen and (max-width: $bp-5)
+  grid-column: 1 / -1;
+
+
+
 .form &__label &-radio--2
 @media only screen and (max-width: $bp-3)
   width: 100%;
   grid-column: 3 / 5;
+
+@media only screen and (max-width: $bp-5)
+  grid-column: 1 / -1;
+  grid-row: 6 / -1;
+
+
 
 .form &__input &--1, &--2
 @media only screen and (max-width: $bp-3)
   width: 100%;
   grid-column: 1 / 4;
 
-@media only screen and (max-width: $bp-4)
+@media only screen and (max-width: $bp-3-5)
   grid-column: 1 / -1;
+
+
 
 .form &__label &-input
 @media only screen and (max-width: $bp-3)
@@ -143,10 +170,42 @@ home.scss
   grid-template-columns: repeat(3, minmax(25rem, 1fr));
   grid-gap: 5rem;
 
+@media only screen and (max-width: $bp-3)
+  grid-template-columns: repeat(auto-fit, minmax(55rem, 1fr));
+  padding: 25rem 5rem;
+
+@media only screen and (max-width: $bp-5)
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  padding: 5rem 5vw;
+
+
+
+
 .features 
 @media only screen and (max-width:$bp-1) 
   grid-template-columns: repeat(4, minmax(15rem, 1fr));
   grid-gap: 5rem;
+
+@media only screen and (max-width: $bp-3)
+  grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
+  padding: 15rem 5rem;
+  -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+
+@media only screen and (max-width: $bp-3-3)
+  grid-gap: 8rem;
+
+@media only screen and (max-width: $bp-3-5)
+  -webkit-clip-path: polygon(0 2.5%, 100% 0, 100% 97.5%, 0 100%);
+  clip-path: polygon(0 2.5%, 100% 0, 100% 97.5%, 0 100%);
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  padding: 15rem 5vw;
+
+@media only screen and (max-width:$bp-4) 
+  grid-gap: 5rem;
+  padding: 10rem 5vw;
+
+
 
 .booking &__box
 @media only screen and (max-width: $bp-3) {
@@ -154,6 +213,10 @@ home.scss
   @include grid-center-7;
   height: 40rem;
   width: 65vw;
+
+@media only screen and (max-width: $bp-4)
+  height: 30rem;
+
 
 .story &-pictures
 @media only screen and (max-width: $bp-3)
@@ -263,7 +326,7 @@ btn.scss
 
 .btn &--orange &-invisible 
 @media only screen and (max-width: $bp-3)
-  animation: invisible 20s infinite 3s;
+  animation: invisible 10s infinite 1.5s;
 
 .btn &--orange &-invisible a:link, a:visited
 @media only screen and (max-width: $bp-3)
@@ -276,7 +339,7 @@ btn.scss
 
 .btn &--orange &-visible 
 @media only screen and (max-width: $bp-3)
-  animation: visible 20s infinite 3s;
+  animation: visible 10s infinite 1.5s;
 
 .btn &--orange &-visible a:link, a:visited
 @media only screen and (max-width: $bp-3)
@@ -285,6 +348,10 @@ btn.scss
 .btn &--orange &-visible a:link, a:visited
 @media only screen and (max-width: $bp-4)
   padding: 1.55rem 3.5rem;
+
+.btn &--popup 
+@media only screen and (max-width: $bp-3) {
+  justify-self: center;
 
 ------------------------------
 
@@ -295,9 +362,10 @@ reviews.scss
     padding: 3rem 12rem;
 
 @media only screen and (max-width: $bp-3-5)
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  -webkit-clip-path: none;
+  clip-path: none;
   padding: 3rem 5rem;
+  box-shadow: $bx-sw-4
 
 @media only screen and (max-width: $bp-4)
   hyphens: none;
@@ -307,6 +375,10 @@ reviews.scss
 @media only screen and (max-width: $bp-4)
   @include grid-center-6;
   grid-gap: 3rem;
+
+.review &__shape
+@media only screen and (max-width: $bp-4)
+  transform: translateX(0);
 
 .review &:active &__caption
 @media only screen and (max-width: $bp-3)
@@ -331,6 +403,102 @@ reviews.scss
 
 @media only screen and (max-width: $bp-4)
   text-align: justify;
+
+------------------------------
+
+footer.scss
+
+.footer
+@media only screen and (max-width: $bp-3-5)
+  grid-template-rows: repeat(3, min-content);
+
+.footer  &__social
+@media only screen and (max-width: $bp-3-5)
+  grid-row: 3 / 4;
+  grid-column: 1 / -1;
+
+.footer  &__text
+@media only screen and (max-width: $bp-3-5)
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
+
+------------------------------
+
+popup.scss
+
+.popup &__content
+@media only screen and (max-width: $bp-3)
+  grid-template-rows: repeat(2, min-content);
+
+.popup &__photos
+@media only screen and (max-width: $bp-3)
+  grid-row: 2 / 3;
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, min-content);
+
+.popup &__photos  &--1
+@media only screen and (max-width: $bp-3)
+  grid-column: 1 / 2;
+
+.popup &__photos  &--2
+@media only screen and (max-width: $bp-3)
+  grid-column: 2 / -1;
+
+.popup &__story
+@media only screen and (max-width: $bp-3)
+  grid-row: 1/2;
+  grid-column: 1/-1;
+  padding: 5rem;
+  justify-items: center;
+  grid-gap: 3rem;
+  padding: 3rem;
+
+@media only screen and (max-width: $bp-3-5)
+  grid-gap: 2.5rem;
+  padding: 2.5rem;
+
+@media only screen and (max-width: $bp-4)
+  grid-gap: 2rem;
+  padding: 2rem;
+
+------------------------------
+
+feature-box.scss
+
+.feature-box  &:hover
+@media only screen and (max-width: $bp-3)
+  transform: translateY(-.2rem) scale(1.05);
+
+@media only screen and (max-width: $bp-3-5)
+  transform: translateY(-.15rem) scale(1.03);
+
+
+
+.feature-box  &:active
+@media only screen and (max-width: $bp-3)
+  transform: translateY(-.2rem) scale(1.05);
+  box-shadow: $bx-sw-2;
+
+@media only screen and (max-width: $bp-3-5)
+  transform: translateY(-.15rem) scale(1.03);
+
+
+------------------------------
+
+logo.scss
+
+.logo &--header
+@media only screen and (max-width: $bp-3-5)
+  margin: 2rem;
+  width: 5rem;
+  height: 5rem;
+
+.logo &--footer
+@media only screen and (max-width: $bp-3-5)
+  margin-bottom: 0;
+
 
 ------------------------------
 
