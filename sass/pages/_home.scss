@@ -25,21 +25,13 @@
       outline-offset: .5rem;
     }
 
-    &:hover {
+    &:hover,
+    &:active {
       z-index: 5;
       transform: scale(1.2);
       outline: 1.2rem solid $color-green-medium;
 
       @media only screen and (max-width: $bp-3) {
-        transform: scale(1.08);
-        outline: .8rem solid $color-green-medium;
-      }
-    }
-
-    &:active {
-
-      @media only screen and (max-width: $bp-3) {
-        z-index: 5;
         transform: scale(1.08);
         outline: .8rem solid $color-green-medium;
       }
@@ -134,7 +126,7 @@
   }
 
   @media only screen and (max-width: $bp-3-3) {
-    grid-gap: 8rem;
+    grid-gap: 9rem;
   }
 
   @media only screen and (max-width: $bp-3-5) {
@@ -168,7 +160,7 @@
 
   @media only screen and (max-width: $bp-3) {
     grid-template-columns: repeat(auto-fit, minmax(55rem, 1fr));
-    padding: 25rem 5rem;
+    padding: 5rem;
   }
 
   @media only screen and (max-width: $bp-5) {
@@ -218,8 +210,9 @@
     &--4,
     &--5 {
 
+      &:hover,
       &:active {
-        outline: 1.2rem solid $color-orange-light;
+        outline: .7rem solid $color-orange-light;
 
         @media only screen and (max-width: $bp-3) {
           outline: .4rem solid $color-orange-light;

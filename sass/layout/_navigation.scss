@@ -4,12 +4,12 @@
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(5, 14rem);
+    grid-template-columns: repeat(5, 14rem); // sirina jednog __item-a * 5
     justify-content: end;
 
     list-style: none;
     background-color: $color-white;
-    height: 5rem;
+    // height: 5rem;
     width: 100%;
 
     position: fixed;
@@ -19,6 +19,16 @@
     
     box-shadow: $bx-sw-1;
     z-index: 2000;
+
+    @media only screen and (max-width: $bp-3-5) {
+      @include grid-center-2;
+      grid-template-columns: repeat(5, 10rem); // sirina jednog __item-a * 5
+    }
+
+    @media only screen and (max-width: $bp-5) {
+      grid-template-columns: repeat(5, 7.5rem); 
+      justify-content: space-between;
+    }
   }
 
   &__item {
@@ -51,6 +61,16 @@
     font-weight: 600;
     text-decoration: none;
     padding: 1.5rem 3.5rem;
+
+    @media only screen and (max-width: $bp-3-5) {
+      padding: 1rem 2.5rem; // odredjuje visinu navigacije
+      font-size: 1.2rem;
+    }
+
+    @media only screen and (max-width: $bp-5) {
+      font-size: 1rem;
+      padding: .7rem;
+    }
   }
 
 }

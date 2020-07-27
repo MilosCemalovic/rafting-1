@@ -12,6 +12,10 @@
   position: fixed;
   top: 1.5rem;
   z-index: 2001;
+
+  @media only screen and (max-width: $bp-3-5) {
+    display: none;
+  }
 }
 
 .heading-3 {
@@ -32,6 +36,11 @@
     @media only screen and (max-width: $bp-4) {
       font-size: 3rem;
     }
+
+    @media only screen and (max-width: $bp-5) {
+      font-size: 2rem;
+      letter-spacing: 2rem;
+    }
   }
 
   &--sub {
@@ -43,12 +52,21 @@
     @media only screen and (max-width: $bp-4) {
       font-size: 1.5rem;
     }
+
+    @media only screen and (max-width: $bp-5) {
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
   }
 }
 
 .heading-4 {
   @extend %heading;
   font-size: 1.5rem;
+
+  @media only screen and (max-width: $bp-4) {
+    font-size: 1.35rem;
+  }
 
   &--story {
     color: $color-green-medium;
@@ -71,13 +89,17 @@
   font-weight: 300;
 
   @media only screen and (max-width: $bp-4) {
-    font-size: 1.85rem;
+    font-size: 1.9rem;
   }
 
 
   &--story {
     color: $color-grey;
     font-style: italic;
+
+    @media only screen and (max-width: $bp-5) {
+      text-align: center;
+    }
   }
   
   &__card {
@@ -98,6 +120,10 @@
     padding: 1rem 1.5rem;
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
+
+    @media only screen and (max-width: $bp-4) {
+      padding: .7rem 1rem;
+    }
     
 
     &--1 {
@@ -127,6 +153,10 @@
 
   @media only screen and (max-width: $bp-4) {
     font-size: 2.5rem;
+  }
+
+  @media only screen and (max-width: $bp-5) {
+    font-size: 2rem;
   }
 
   &--popup {

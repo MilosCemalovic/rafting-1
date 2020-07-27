@@ -29,6 +29,14 @@ body {
   @media only screen and (max-width: $bp-3) {
     grid-template-rows: 5rem calc(100vh - 5rem);
   }
+
+  @media only screen and (max-width: $bp-3-5) {
+    grid-template-rows: 3.5rem calc(100vh - 3.5rem);
+  }
+
+  @media only screen and (max-width: $bp-5) {
+    grid-template-rows: 1.5rem calc(100vh - 1.5rem);
+  }
 }
 
 ::selection {

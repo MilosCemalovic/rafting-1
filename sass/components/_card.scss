@@ -21,6 +21,11 @@
       transform: rotateY(0);
       display: grid;
       grid-template-rows: repeat(2, min-content);
+
+      @media only screen and (max-width: $bp-3) {
+        animation: card-front 10s infinite 1.5s;
+      }
+      
     }
 
     &--back {
@@ -28,6 +33,10 @@
       transform: rotateY(180deg);
       @include grid-center-4;
       grid-template-rows: repeat(3, min-content);
+
+      @media only screen and (max-width: $bp-3) {
+        animation: card-back 10s infinite 1.5s;
+      }
 
       &-1 {
         background-image: linear-gradient(to right bottom, $color-orange-light, $color-orange-dark);
@@ -44,11 +53,14 @@
 
   }
 
-  &:hover &__side--front {
+  &:hover &__side--front,
+  &:active &__side--front
+   {
     transform: rotateY(-180deg);
   }
 
-  &:hover &__side--back {
+  &:hover &__side--back,
+  &:active &__side--back {
     transform: rotateY(0);
   }
 

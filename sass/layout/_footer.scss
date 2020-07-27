@@ -36,8 +36,15 @@
     
     transition: $transition-1;
 
-    &:hover {
+    &:hover,
+    &:active {
       transform: translateY(-.3rem);
+    }
+
+    @media only screen and (max-width: $bp-5) {
+      margin-top: 2rem;
+      width: 2.5rem;
+      height: 2.5rem;
     }
   }
 

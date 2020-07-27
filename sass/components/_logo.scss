@@ -10,6 +10,13 @@
       width: 5rem;
       height: 5rem;
     }
+
+    @media only screen and (max-width: $bp-5) {
+      margin: 1rem;
+      margin-top: 2rem;
+      width: 3.5rem;
+      height: 3.5rem;
+    }
   }
 
   &--footer {
@@ -37,7 +44,8 @@
     transition: $transition-1;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:active {
       transform: translateY(-.3rem);
     }
   }

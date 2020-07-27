@@ -18,7 +18,7 @@ Story content - kreirane 3 utility klase ( u posebnom .scss fajlu i taj fajl ukl
 -------------------------------------------------
 Feature - clip-path: polygon(), sa 4 kartice preko grida, koje imaju po 1 html <svg> element koji u sebi ima html <use> element i gadja .svg fajl preko xlink:href="sprite.svg" fajl, u kome se nalaze sve .svg ikonice neophodne za sajt, 1 h4 sa modifikatorom i 1 paragraf, uz hover i transform: translateY() i scale() i 2 box-shadow stanja (kada je karta dole i kada je gore), grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); Ikonicama data visina, sirina i boja preko fill:...; property-a
 -------------------------------------------------
-Gallery - grid preko jedinica vw - grid-template-rows: repeat(5, 5vw) i img dovedene u red preko object-fit: cover; width: 100%; height: 100%; Na klik preko pseudo klase :acitve stanja iskacu slike putem transform: translateX(-100%) translateY(50%) scale(2.5) sa ramom outline: 1.2rem solid $color-orange-light;
+Gallery - grid preko jedinica vw - grid-template-rows: repeat(5, 5vw) i img dovedene u red preko object-fit: cover; width: 100%; height: 100%; Na klik preko pseudo klase :acitve stanja iskacu slike putem transform: translateX(-100%) translateY(50%) scale(2.5) sa ramom outline: .7rem solid $color-orange-light;
 -------------------------------------------------
 Cards - formirana sekcija koja sadrzi naslov, 3 karte sa po dve strane i dugme. Formirane su velicine dve strane koje su apsoultno postavljene rotiraju za 180* / korisnjeni su transform: rotateY(-180deg), backface-visibility: hidden, box-shadow: $bx-sw-1, border-radius i perspective: 150rem; Uradjena je kompletna zadnja strana preko grida sa 3 elementa i svakoj dodat background-image.Na prednjoj strani je uradjena slika preko css-a background-image uz background-size: cover, background-blend-mode: screen i clip-path: polygon() i naslov koji se lomi uz pomoc box-decoration-break: clone i width: 55%, a pozicionira sa text-align: right;Elementima<div class="card__picture card__picture--1, --2 i --3"> dat je  karakter entiteta reference (character entity reference) &nbsp; koji ne pokazuje nista
 -------------------------------------------------
@@ -172,7 +172,7 @@ home.scss
 
 @media only screen and (max-width: $bp-3)
   grid-template-columns: repeat(auto-fit, minmax(55rem, 1fr));
-  padding: 25rem 5rem;
+  padding: 5rem;
 
 @media only screen and (max-width: $bp-5)
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
@@ -193,7 +193,7 @@ home.scss
   clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
 
 @media only screen and (max-width: $bp-3-3)
-  grid-gap: 8rem;
+  grid-gap: 9rem;
 
 @media only screen and (max-width: $bp-3-5)
   -webkit-clip-path: polygon(0 2.5%, 100% 0, 100% 97.5%, 0 100%);
@@ -237,14 +237,8 @@ home.scss
 @media only screen and (max-width: $bp-3)
     outline-offset: .5rem;
 
-.story &-pictures &__img &:hover
+.story &-pictures &__img &:hover, &:active
 @media only screen and (max-width: $bp-3)
-  transform: scale(1.08);
-  outline: .8rem solid $color-green-medium;
-
-.story &-pictures &__img &:active
-@media only screen and (max-width: $bp-3)
-  z-index: 5;
   transform: scale(1.08);
   outline: .8rem solid $color-green-medium;
 
@@ -263,7 +257,7 @@ home.scss
     grid-row: 2 / 5;
     grid-column: 6 / -1;
 
-.gallery &__img &--1, &--2, &--3, &--4, &--5 &:active
+.gallery &__img &--1, &--2, &--3, &--4, &--5 &:hover, &:active
 @media only screen and (max-width: $bp-3)
   outline: .4rem solid $color-orange-light;
 
@@ -276,24 +270,64 @@ html
 @media only screen and (max-width: $bp-2)
   font-size: 50%;
 
+body
 @media only screen and (max-width: $bp-3)
   grid-template-rows: 5rem calc(100vh - 5rem);
+
+@media only screen and (max-width: $bp-3-5)
+  grid-template-rows: 3.5rem calc(100vh - 3.5rem);
+
+@media only screen and (max-width: $bp-5)
+  grid-template-rows: 1.5rem calc(100vh - 1.5rem);
 
 ------------------------------
 
 typography.scss
 
+.heading-1
+@media only screen and (max-width: $bp-3-5)
+  display: none;
+
 .heading-3 &--main
 @media only screen and (max-width: $bp-4)
-    font-size: 3rem;
+  font-size: 3rem;
+
+@media only screen and (max-width: $bp-5)
+  font-size: 2rem;
+  letter-spacing: 2rem;
+
+
+
 
 .heading-3 &--sub
 @media only screen and (max-width: $bp-4)
     font-size: 1.5rem;
 
+@media only screen and (max-width: $bp-5)
+  font-size: 1rem;
+  margin-top: 1rem;
+
+
+
+.heading-4
+@media only screen and (max-width: $bp-4)
+    font-size: 1.35rem;
+
+
+
 .heading-5
 @media only screen and (max-width: $bp-4)
-    font-size: 1.85rem;
+    font-size: 1.9rem;
+
+.heading-5 &--story
+@media only screen and (max-width: $bp-5)
+  text-align: center;
+
+
+.heading-5 &__card-span
+@media only screen and (max-width: $bp-4)
+  padding: .7rem 1rem;
+
 
 .heading-6
 @media only screen and (max-width: $bp-3)
@@ -301,6 +335,9 @@ typography.scss
 
 @media only screen and (max-width: $bp-4)
   font-size: 2.5rem;
+
+@media only screen and (max-width: $bp-5)
+  font-size: 2rem;
 
 ------------------------------
 
@@ -310,44 +347,52 @@ btn.scss
 @media only screen and (max-width: $bp-3)
   padding: 1.75rem 5rem;
 
+
 .btn a:link, a:visited
 @media only screen and (max-width: $bp-4)
   padding: 1.55rem 3.5rem;
 
-.btn &:focus, &:active
-@media only screen and (max-width: $bp-3)
-  transform: translateY(-.3rem);
-  box-shadow: $bx-sw-2;
+@media only screen and (max-width: $bp-5)
+  padding: 1.25rem 2rem;
+  font-size: 1.25rem;
 
-.btn &:focus, &:active &::after
-@media only screen and (max-width: $bp-3)
-  transform: scaleX(1.4) scaleY(1.6);
-  opacity: 0;
 
 .btn &--orange &-invisible 
 @media only screen and (max-width: $bp-3)
   animation: invisible 10s infinite 1.5s;
 
+
 .btn &--orange &-invisible a:link, a:visited
 @media only screen and (max-width: $bp-3)
   padding: 1.75rem 0;
 
-.btn &--orange &-invisible a:link, a:visited
 @media only screen and (max-width: $bp-4)
   padding: 1.55rem 0;
   font-size: 1.25rem;
+
+@media only screen and (max-width: $bp-5)
+  padding: 1.35rem 0;
+  font-size: .9rem;
+
+
 
 .btn &--orange &-visible 
 @media only screen and (max-width: $bp-3)
   animation: visible 10s infinite 1.5s;
 
+
 .btn &--orange &-visible a:link, a:visited
 @media only screen and (max-width: $bp-3)
   padding: 1.75rem 5rem;
 
-.btn &--orange &-visible a:link, a:visited
 @media only screen and (max-width: $bp-4)
   padding: 1.55rem 3.5rem;
+
+@media only screen and (max-width: $bp-5)
+  padding: 1.25rem 2rem;
+  font-size: 1.25rem;
+
+
 
 .btn &--popup 
 @media only screen and (max-width: $bp-3) {
@@ -380,23 +425,6 @@ reviews.scss
 @media only screen and (max-width: $bp-4)
   transform: translateX(0);
 
-.review &:active &__caption
-@media only screen and (max-width: $bp-3)
-  opacity: 1;
-  transform: translate(-50%, -50%);
-
-.review &:active &__img
-@media only screen and (max-width: $bp-3)
-  filter: blur(.3rem) brightness(95%);
-
-.review &:active &__img &--1
-@media only screen and (max-width: $bp-3)
-  transform: translateX(-6rem) scale(1);
-
-.review &:active &__img &--2
-@media only screen and (max-width: $bp-3)
-  transform: scale(1);
-
 .review &__text
 @media only screen and (max-width: $bp-3)
   hyphens: auto;
@@ -412,10 +440,16 @@ footer.scss
 @media only screen and (max-width: $bp-3-5)
   grid-template-rows: repeat(3, min-content);
 
-.footer  &__social
+.footer &__social
 @media only screen and (max-width: $bp-3-5)
   grid-row: 3 / 4;
   grid-column: 1 / -1;
+
+.footer &__icon
+@media only screen and (max-width: $bp-5)
+  margin-top: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
 
 .footer  &__text
 @media only screen and (max-width: $bp-3-5)
@@ -467,23 +501,12 @@ popup.scss
 
 feature-box.scss
 
-.feature-box  &:hover
+.feature-box  &:hover, &:active
 @media only screen and (max-width: $bp-3)
   transform: translateY(-.2rem) scale(1.05);
 
 @media only screen and (max-width: $bp-3-5)
   transform: translateY(-.15rem) scale(1.03);
-
-
-
-.feature-box  &:active
-@media only screen and (max-width: $bp-3)
-  transform: translateY(-.2rem) scale(1.05);
-  box-shadow: $bx-sw-2;
-
-@media only screen and (max-width: $bp-3-5)
-  transform: translateY(-.15rem) scale(1.03);
-
 
 ------------------------------
 
@@ -495,9 +518,67 @@ logo.scss
   width: 5rem;
   height: 5rem;
 
+@media only screen and (max-width: $bp-5)
+  margin: 1rem;
+  margin-top: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+
+
+
 .logo &--footer
 @media only screen and (max-width: $bp-3-5)
   margin-bottom: 0;
+
+
+------------------------------
+
+card.scss
+
+.card &__side &--front
+@media only screen and (max-width: $bp-3)
+  animation: card-front 10s infinite 1.5s;
+
+.card &__side &--back
+@media only screen and (max-width: $bp-3)
+  animation: card-back 10s infinite 1.5s;
+
+------------------------------
+
+header.scss
+
+.header
+@media only screen and (max-width: $bp-3)
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+
+@media only screen and (max-width: $bp-3-5)
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+
+------------------------------
+
+navigation.scss
+
+.navigation &__list
+@media only screen and (max-width: $bp-3-5)
+  @include grid-center-2;
+  grid-template-columns: repeat(5, 10rem);
+
+@media only screen and (max-width: $bp-5)
+  grid-template-columns: repeat(5, 7.5rem);
+  justify-content: space-between;
+
+
+
+.navigation &__link:link, &__link:visited
+@media only screen and (max-width: $bp-3-5)
+  padding: 1rem 2.5rem;
+  font-size: 1.2rem;
+
+@media only screen and (max-width: $bp-5)
+  padding: .7rem;
+  font-size: 1rem;
 
 
 ------------------------------
