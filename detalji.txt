@@ -1,4 +1,4 @@
-Projekat je radjen sa naprednim CSS tehnikama: CSS Grid i Flexbox preko CSS predprocesora SASS. Sajt NE POSEDUJE js!!! Dodat js folder sa smooth-scroll.js, ali se ne koristi, jer onemogucava rad #popup sekcije. Zakomentarisan je poziv <script src="js/smooth-scroll.js"> funkcije u index.html. Korisceni razni tagovi u naslovu i imenima fotografija radi boljeg SEO. Koriscene svg ikonice i sprite.svg umesto .jpg i .png radi brzeg ucitavanja sajta.
+Projekat je radjen sa naprednim CSS tehnikama: CSS Grid i Flexbox preko CSS predprocesora SASS. Sajt NE POSEDUJE js!!! Korisceni razni tagovi u naslovu i imenima fotografija radi boljeg SEO. Koriscene svg ikonice i sprite.svg umesto .jpg i .png radi brzeg ucitavanja sajta.
 
 -------------------------------------------------
 
@@ -89,9 +89,6 @@ Footer - postavljen logo preko html <picture> elementa u kome se nalaze hmtl <so
 -------------------------------------------------
 .heading-1  { z-index: 2001; } .navigation &__list { z-index: 2000; }.popup { z-index: 1999; }.story &-pictures &__img:hover { z-index: 5; } .heading-5 &__card { z-index: 2; } .card &__picture { z-index: 1;
 .story &-pictures &__img &--1, &--2 i &--3 { z-index: 1; }  .btn::after { z-index: -1; }.bg-video { z-index: -1; } 
--------------------------------------------------
-Dodat js folder sa smooth-scroll.js, ali se ne koristi, jer onemogucava rad #popup sekcije
-Zakomentarisani u index.html <script src="js/smooth-scroll.js">
 -------------------------------------------------
 MEDIA QUERY
 
