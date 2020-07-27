@@ -17,6 +17,7 @@
   @media only screen and (max-width: $bp-3-5) {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    background-position: center;
   }
 
   &__link {

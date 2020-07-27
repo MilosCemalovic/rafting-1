@@ -686,6 +686,7 @@ body {
 .card__picture {
   height: 23rem;
   background-size: cover;
+  background-position: center;
   background-blend-mode: screen;
   clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
   grid-row: 1 / 2;
@@ -1331,6 +1332,7 @@ body {
 @media only screen and (max-width: 51.5em) {
   .header {
     clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    background-position: center;
   }
 }
 
@@ -1719,6 +1721,7 @@ body {
 @media only screen and (max-width: 40em) {
   .booking__box {
     height: 30rem;
+    background-position: center;
   }
 }
 /*# sourceMappingURL=main.css.map */

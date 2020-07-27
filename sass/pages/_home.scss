@@ -283,7 +283,6 @@
     background-color: #fff;
     background-image: linear-gradient(105deg, rgba($color-grey-light-2, .9) 0%, rgba($color-grey-light-2, .9) 50%, transparent 50%), url(../img/rafting-1-15.jpg);
     background-size: cover;
-    // background-position: center;
 
     @media only screen and (max-width: $bp-3) {
       background-image: linear-gradient(to right, rgba($color-grey-light-2, .9), rgba($color-grey-light-2, .9)), url(../img/rafting-1-15.jpg);
@@ -294,6 +293,7 @@
 
     @media only screen and (max-width: $bp-4) {
       height: 30rem;
+      background-position: center;
     }
   }
 }

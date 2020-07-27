@@ -81,6 +81,7 @@
   &__picture {
     height: 23rem;
     background-size: cover;
+    background-position: center;
     background-blend-mode: screen;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
