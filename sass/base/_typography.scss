@@ -143,13 +143,13 @@
     //   padding: .5rem 5rem;
     // }
 
-    @media only screen and (max-width: $bp-6) {
-      padding: .5rem 5rem;
-    }
+    // @media only screen and (max-width: $bp-6) {
+    //   padding: .5rem 5rem;
+    // }
 
-    @media only screen and (max-width: $bp-7) {
-      padding: .5rem 1.5rem;
-    }
+    // @media only screen and (max-width: $bp-7) {
+    //   padding: .5rem 1.5rem;
+    // }
     
 
     &--1 {
@@ -159,17 +159,17 @@
     &--2 {
       background-image: linear-gradient(to right bottom, rgba($color-green-light, .75), rgba($color-green-dark, .75));
 
-      @media only screen and (max-width: $bp-2) {
-        padding: .5rem 3rem;
-      }
+      // @media only screen and (max-width: $bp-2) {
+      //   padding: .5rem 3rem;
+      // }
 
-      @media only screen and (max-width: $bp-5) {
-        padding: .5rem 5rem;
-      }
+      // @media only screen and (max-width: $bp-5) {
+      //   padding: .5rem 5rem;
+      // }
 
-      @media only screen and (max-width: $bp-7) {
-        padding: .5rem 2rem;
-      }
+      // @media only screen and (max-width: $bp-7) {
+      //   padding: .5rem 2rem;
+      // }
 
     }
 
