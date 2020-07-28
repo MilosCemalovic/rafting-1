@@ -7,15 +7,17 @@
 
   font-size: 1.4rem;
   color: $color-green-dark;
-  // color: $color-blue-light;
   margin-left: 3rem;
-  position: fixed;
-  top: 1.5rem;
-  z-index: 2001;
 
   @media only screen and (max-width: $bp-3-5) {
-    display: none;
+    font-size: 1rem;
+    margin-left: 2rem;
   }
+
+  @media only screen and (max-width: $bp-5) {
+    margin-left: 1rem;
+  }
+  
 }
 
 .heading-3 {
@@ -88,6 +90,10 @@
   font-size: 2.5rem;
   font-weight: 300;
 
+  @media only screen and (max-width: $bp-2) {
+    font-size: 2rem;
+  }
+
   @media only screen and (max-width: $bp-4) {
     font-size: 1.9rem;
   }
@@ -121,8 +127,28 @@
     -webkit-box-decoration-break: clone;
     box-decoration-break: clone;
 
+    @media only screen and (max-width: $bp-1) {
+      padding: 1rem .7rem;
+    }
+
+    @media only screen and (max-width: $bp-2) {
+      padding: .5rem 2.4rem;
+    }
+
     @media only screen and (max-width: $bp-4) {
       padding: .7rem 1rem;
+    }
+
+    // @media only screen and (max-width: $bp-5) {
+    //   padding: .5rem 5rem;
+    // }
+
+    @media only screen and (max-width: $bp-6) {
+      padding: .5rem 5rem;
+    }
+
+    @media only screen and (max-width: $bp-7) {
+      padding: .5rem 1.5rem;
     }
     
 
@@ -132,6 +158,19 @@
 
     &--2 {
       background-image: linear-gradient(to right bottom, rgba($color-green-light, .75), rgba($color-green-dark, .75));
+
+      @media only screen and (max-width: $bp-2) {
+        padding: .5rem 3rem;
+      }
+
+      @media only screen and (max-width: $bp-5) {
+        padding: .5rem 5rem;
+      }
+
+      @media only screen and (max-width: $bp-7) {
+        padding: .5rem 2rem;
+      }
+
     }
 
     &--3 {

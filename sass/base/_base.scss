@@ -21,22 +21,22 @@ body {
   font-weight: 400;
   line-height: 1.4;
   display: grid;
-  grid-template-rows: 5rem calc(100vh - 5rem) 40vw repeat(6, min-content);
+  grid-template-rows: 5rem 5rem calc(100vh - 10rem) 40vw repeat(6, min-content);
   grid-template-columns: repeat(4, 1fr);
-  // padding:0 3rem 3rem 3rem;
   background-color: $color-white;
 
   @media only screen and (max-width: $bp-3) {
-    grid-template-rows: 5rem calc(100vh - 5rem);
+    grid-template-rows: 5rem 5rem calc(100vh - 10rem);
   }
 
   @media only screen and (max-width: $bp-3-5) {
-    grid-template-rows: 3.5rem calc(100vh - 3.5rem);
+    grid-template-rows: 3.5rem 3.7rem calc(100vh - 7.2rem);
   }
 
   @media only screen and (max-width: $bp-5) {
-    grid-template-rows: 1.5rem calc(100vh - 1.5rem);
+    grid-template-rows: 3.5rem 2.8rem calc(100vh - 6.4rem);
   }
+
 }
 
 ::selection {

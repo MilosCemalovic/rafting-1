@@ -1,5 +1,30 @@
 .logo {
 
+  &--top {
+    margin-left: 3rem;
+    width: 3.5rem;
+    height: 3.5rem;
+    
+    transition: $transition-1;
+
+    &:hover,
+    &:active {
+      transform: translateY(-.2rem);
+    }
+
+    @media only screen and (max-width: $bp-3-5) {
+      margin-left: 2rem;
+      width: 3rem;
+      height: 3rem;
+    }
+
+    @media only screen and (max-width: $bp-5) {
+      width: 2rem;
+      height: 2rem;
+      margin-left: 1rem;
+    }
+  }
+
   &--header {
     margin: 3rem;
     width: 9rem;
