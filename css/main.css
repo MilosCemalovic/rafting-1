@@ -306,42 +306,12 @@ body {
   }
 }
 
-@media only screen and (max-width: 25.125em) {
-  .heading-5__card-span {
-    padding: .5rem 5rem;
-  }
-}
-
-@media only screen and (max-width: 21.375em) {
-  .heading-5__card-span {
-    padding: .5rem 1.5rem;
-  }
-}
-
 .heading-5__card-span--1 {
   background-image: linear-gradient(to right bottom, rgba(255, 185, 0, 0.75), rgba(255, 119, 48, 0.75));
 }
 
 .heading-5__card-span--2 {
   background-image: linear-gradient(to right bottom, rgba(126, 213, 111, 0.75), rgba(40, 180, 133, 0.75));
-}
-
-@media only screen and (max-width: 75em) {
-  .heading-5__card-span--2 {
-    padding: .5rem 3rem;
-  }
-}
-
-@media only screen and (max-width: 30.25em) {
-  .heading-5__card-span--2 {
-    padding: .5rem 5rem;
-  }
-}
-
-@media only screen and (max-width: 21.375em) {
-  .heading-5__card-span--2 {
-    padding: .5rem 2rem;
-  }
 }
 
 .heading-5__card-span--3 {
