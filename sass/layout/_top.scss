@@ -4,6 +4,16 @@
   justify-content: space-between;
   align-items: center;
   background-color: $color-grey-light-1;
+
+  &__link {
+
+    transition: $transition-2;
+
+    &:hover,
+    &:active {
+      transform: translateY(-.2rem);
+    }
+  }
   
   &__social {
     width: 20rem;
@@ -34,12 +44,19 @@
     @media only screen and (max-width: $bp-5) {
       width: 1.5rem;
       height: 1.5rem;
-    }
-    
+    }   
 
-    &:hover,
-    &:active {
-      transform: translateY(-.2rem);
-    }
   }
+  
+  &__cv {
+    text-decoration: none;
+    background-color: $color-black;
+    color: $color-white;
+    width: 2.07rem;
+    height: 2.07rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    @include grid-center-1;
+    margin: 0 0 .5rem -.2rem;
+  } 
 }
