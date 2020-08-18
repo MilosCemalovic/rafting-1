@@ -27,10 +27,25 @@
     }
   }
 
-  &__icon {
+  &__cv {
+    text-decoration: none;
+    background-color: $color-black;
+    color: $color-white;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    @include grid-center-1;
+
+    @media only screen and (max-width: $bp-5) {
+      font-size: 1rem;
+    }
+  }
+
+  &__icon,
+  &__cv {
     width: 4rem;
     height: 4rem;
-    margin-top: 5rem;
+    margin-top: 3rem;
+    border-radius: 50%;
     cursor: pointer;
     // margin: 0 2rem;
     
