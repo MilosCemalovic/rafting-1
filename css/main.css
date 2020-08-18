@@ -1568,6 +1568,14 @@ body {
   margin: 0 0 .5rem -.2rem;
 }
 
+@media only screen and (max-width: 30.25em) {
+  .top__cv {
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: .8rem;
+  }
+}
+
 .story-pictures {
   background-color: #fff;
   grid-column: 1 / 3;

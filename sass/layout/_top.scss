@@ -58,5 +58,11 @@
     font-size: 1rem;
     @include grid-center-1;
     margin: 0 0 .5rem -.2rem;
+
+    @media only screen and (max-width: $bp-5) {
+      width: 1.5rem;
+      height: 1.5rem;
+      font-size: .8rem;
+    }   
   } 
 }
