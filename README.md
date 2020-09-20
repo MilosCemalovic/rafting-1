@@ -1,5 +1,5 @@
 # rafting-1
-Project contains Advance CSS, BEM Architecture, SASS, CSS Grid, CSS Flexbox, CSS animatios, SVG icons and HTML5.
+Project contains Advance CSS, BEM Architecture, SASS, CSS Grid, CSS Flexbox, CSS animatios, Background video, SVG icons and HTML5.
 
 Projekat je radjen sa naprednim CSS tehnikama: 
 
