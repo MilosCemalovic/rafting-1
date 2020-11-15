@@ -22,9 +22,9 @@
       display: grid;
       grid-template-rows: repeat(2, min-content);
 
-      @media only screen and (max-width: $bp-3) {
-        animation: card-front 10s infinite 1.5s;
-      }
+      // @media only screen and (max-width: $bp-3) {
+      //   animation: card-front 10s infinite 1.5s;
+      // }
       
     }
 
@@ -34,9 +34,9 @@
       @include grid-center-4;
       grid-template-rows: repeat(3, min-content);
 
-      @media only screen and (max-width: $bp-3) {
-        animation: card-back 10s infinite 1.5s;
-      }
+      // @media only screen and (max-width: $bp-3) {
+      //   animation: card-back 10s infinite 1.5s;
+      // }
 
       &-1 {
         background-image: linear-gradient(to right bottom, $color-orange-light, $color-orange-dark);

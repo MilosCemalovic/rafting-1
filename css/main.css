@@ -193,6 +193,11 @@ body {
   margin-left: 3rem;
 }
 
+.heading-1__link:link, .heading-1__link:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
 @media only screen and (max-width: 51.5em) {
   .heading-1 {
     font-size: 1rem;
@@ -685,12 +690,6 @@ body {
   grid-template-rows: repeat(2, min-content);
 }
 
-@media only screen and (max-width: 58.75em) {
-  .card__side--front {
-    animation: card-front 10s infinite 1.5s;
-  }
-}
-
 .card__side--back {
   background-color: #2998ff;
   transform: rotateY(180deg);
@@ -698,12 +697,6 @@ body {
   align-content: center;
   justify-items: center;
   grid-template-rows: repeat(3, min-content);
-}
-
-@media only screen and (max-width: 58.75em) {
-  .card__side--back {
-    animation: card-back 10s infinite 1.5s;
-  }
 }
 
 .card__side--back-1 {
@@ -1821,12 +1814,13 @@ body {
   transition: all 0.2s;
 }
 
-.gallery__img--1:hover, .gallery__img--1:active, .gallery__img--2:hover, .gallery__img--2:active, .gallery__img--3:hover, .gallery__img--3:active, .gallery__img--4:hover, .gallery__img--4:active, .gallery__img--5:hover, .gallery__img--5:active {
+.gallery__img:hover, .gallery__img:active {
+  z-index: 5;
   outline: 0.7rem solid #ffb900;
 }
 
 @media only screen and (max-width: 58.75em) {
-  .gallery__img--1:hover, .gallery__img--1:active, .gallery__img--2:hover, .gallery__img--2:active, .gallery__img--3:hover, .gallery__img--3:active, .gallery__img--4:hover, .gallery__img--4:active, .gallery__img--5:hover, .gallery__img--5:active {
+  .gallery__img:hover, .gallery__img:active {
     outline: 0.4rem solid #ffb900;
   }
 }
@@ -1836,7 +1830,7 @@ body {
   grid-column: 1 / 3;
 }
 
-.gallery__img--1:active {
+.gallery__img--1:hover, .gallery__img--1:active {
   transform: translateX(100%) scale(2.5);
 }
 
@@ -1845,7 +1839,7 @@ body {
   grid-column: 3 / 5;
 }
 
-.gallery__img--2:active {
+.gallery__img--2:hover, .gallery__img--2:active {
   transform: translateY(-50%) scale(2.5);
 }
 
@@ -1854,7 +1848,7 @@ body {
   grid-column: 3 / 5;
 }
 
-.gallery__img--3:active {
+.gallery__img--3:hover, .gallery__img--3:active {
   transform: translateY(100%) scale(2.5);
 }
 
@@ -1863,7 +1857,7 @@ body {
   grid-column: 5 / -1;
 }
 
-.gallery__img--4:active {
+.gallery__img--4:hover, .gallery__img--4:active {
   transform: translateX(-100%) translateY(50%) scale(2.5);
 }
 
@@ -1872,7 +1866,7 @@ body {
   grid-column: 5 / -1;
 }
 
-.gallery__img--5:active {
+.gallery__img--5:hover, .gallery__img--5:active {
   transform: translateX(-100%) translateY(-100%) scale(2.5);
 }
 
