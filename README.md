@@ -1,18 +1,16 @@
 # rafting-1
-Project contains Advance CSS, BEM Architecture, SASS, CSS Grid, CSS Flexbox, DRY principle, CSS animatios, Background video, SVG icons, JavaScript and HTML5.
 
-Projekat je radjen sa: 
+Project is using: 
 
-- BEM Methodology (Block Element Modifier)
 - Advance CSS
-- DRY principle (Don't Repeat Yourself)
+- BEM methodology (Block Element Modifier)
+- CSS3 (animatios and background video)
 - CSS Grid
 - CSS Flexbox
 - SASS
-- JavaScript
-- HTML5
+- SVG sprite
+- DRY principle (Don't Repeat Yourself)
+- SEO (image name, alt, img srcset, source [media, srcset])
+- HTML5 tags (nav, header, span, section, button, figure, figcaption, label, video [autoplay muted loop], picture, source, footer)
 
-Korisceni razni tagovi u naslovu i imenima fotografija radi boljeg SEO. 
-Koriscene svg ikonice (sprite.svg) umesto .jpg i .png radi brzeg ucitavanja sajta. 
-
-Pogledaj MVC OOP PhP verziju - sa validacionim poljima - na mom GitHub profilu.
+- No JavaScript code
