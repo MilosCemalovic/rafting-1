@@ -10,8 +10,8 @@
   visibility: hidden;
   opacity: 0;
   transition: $transition-2;
-  -webkit-backdrop-filter: blur(10px); // radi - chrome i edge, ali ne radi - firefox
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px); // radi - chrome i edge, ali ne radi - firefox
 
   &:target { // ovo je kliknuti id="#popup"
     visibility: visible;

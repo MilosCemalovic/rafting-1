@@ -32,8 +32,7 @@
   grid-row: 2 / 3;
   @include  grid-center-6;
   color: $color-grey-light-1;
-  backface-visibility: hidden;
-// backface-visibility: hidden; - uklanja trzaj teksta na kraju kretanja
+  backface-visibility: hidden; // uklanja trzaj teksta na kraju kretanja
 
   &--main {
     font-size: 6rem;

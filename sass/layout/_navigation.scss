@@ -21,9 +21,7 @@
 
   &__item {
     display: grid;
-    // height: 100%;
     transition: all .3s;
-    // cursor: pointer;
 
     &:hover {
       background-color: $color-green-medium;

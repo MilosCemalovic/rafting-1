@@ -3,8 +3,8 @@
   padding: 5rem 15rem;
   background-color: rgba($color-white, .6);
   width: 75%;
-  -webkit-clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
   clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+  -webkit-clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
 // box-shadow: $bx-sw-4; - box-shadow NE RADI kada je clip-path aktivan
 
   @media only screen and (max-width: $bp-3) {
@@ -12,8 +12,8 @@
   } 
 
   @media only screen and (max-width: $bp-3-5) {
-    -webkit-clip-path: none;
     clip-path: none; // deaktiviram clip-path da bi ukljucio box-shadow
+    -webkit-clip-path: none;
     box-shadow: $bx-sw-4;
     padding: 3rem 5rem;
   } 
@@ -34,10 +34,10 @@
     width: 15rem;
     height: 15rem;
     float: left;
-    -webkit-clip-path: circle(50% at 50% 50%);
     clip-path: circle(50% at 50% 50%);
-    -webkit-shape-outside: circle(50% at 50% 50%);
+    -webkit-clip-path: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%); // sluzi da dozvoli tekstu da ide oko ovog elementa
+    -webkit-shape-outside: circle(50% at 50% 50%);
     transform: translateX(-1.5rem);
     position: relative;  
 
@@ -49,8 +49,7 @@
   &__img {
     height: 100%;
     transition: $transition-1;
-    backface-visibility: hidden;
-// backface-visibility: hidden; - uklanja trzaj teksta na kraju kretanja
+    backface-visibility: hidden; // uklanja trzaj teksta na kraju kretanja
 
     &--1 {
       transform: translateX(-6rem) scale(1.2);
@@ -67,13 +66,11 @@
     left: 50%;
     color: $color-white;
     text-transform: uppercase;
-    transform: translate(-50%, 20%);
-// transform: translate(X-osa, Y-osa);
+    transform: translate(-50%, 20%); // (X-osa, Y-osa)
     font-size: 1.7rem;
     text-align: center;
     opacity: 0;
     backface-visibility: hidden;
-// backface-visibility: hidden; - uklanja trzaj teksta na kraju kretanja
     transition: $transition-2;
   }
 

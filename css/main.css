@@ -670,6 +670,7 @@ body {
   position: relative;
   height: 50rem;
   perspective: 150rem;
+  -moz-perspective: 150rem;
 }
 
 .card__side {
@@ -680,6 +681,7 @@ body {
   left: 0;
   transition: all 1s;
   backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
   box-shadow: 0 0.7rem 1.1rem rgba(0, 0, 0, 0.1);
   border-radius: .3rem;
   overflow: hidden;
@@ -742,6 +744,7 @@ body {
   background-position: center;
   background-blend-mode: screen;
   clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
   grid-row: 1 / 2;
   grid-column: 1 / 2;
   z-index: 1;
@@ -1106,6 +1109,7 @@ body {
   opacity: 0;
   transition: all 0.5s;
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .popup:target {
@@ -1216,6 +1220,7 @@ body {
   background-color: rgba(255, 255, 255, 0.6);
   width: 75%;
   clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+  -webkit-clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
 }
 
 @media only screen and (max-width: 58.75em) {
@@ -1227,6 +1232,7 @@ body {
 @media only screen and (max-width: 51.5em) {
   .review {
     clip-path: none;
+    -webkit-clip-path: none;
     box-shadow: 0 3rem 6rem rgba(0, 0, 0, 0.1);
     padding: 3rem 5rem;
   }
@@ -1251,7 +1257,9 @@ body {
   height: 15rem;
   float: left;
   clip-path: circle(50% at 50% 50%);
+  -webkit-clip-path: circle(50% at 50% 50%);
   shape-outside: circle(50% at 50% 50%);
+  -webkit-shape-outside: circle(50% at 50% 50%);
   transform: translateX(-1.5rem);
   position: relative;
 }
@@ -1419,17 +1427,20 @@ body {
   background-size: cover;
   background-position: left;
   clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 87%, 0 100%);
 }
 
 @media only screen and (max-width: 58.75em) {
   .header {
     clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
   }
 }
 
 @media only screen and (max-width: 51.5em) {
   .header {
     clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 95%, 0 100%);
     background-position: center;
   }
 }
@@ -1705,6 +1716,7 @@ body {
   background-size: cover;
   background-position: center;
   clip-path: polygon(0 13%, 100% 0, 100% 87%, 0 100%);
+  -webkit-clip-path: polygon(0 13%, 100% 0, 100% 87%, 0 100%);
   display: grid;
   grid-template-columns: repeat(4, minmax(25rem, 1fr));
   grid-gap: 6rem;
@@ -1723,6 +1735,7 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
     padding: 15rem 5rem;
     clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
   }
 }
 
@@ -1735,6 +1748,7 @@ body {
 @media only screen and (max-width: 51.5em) {
   .features {
     clip-path: polygon(0 2.5%, 100% 0, 100% 97.5%, 0 100%);
+    -webkit-clip-path: polygon(0 2.5%, 100% 0, 100% 97.5%, 0 100%);
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     padding: 15rem 5vw;
   }

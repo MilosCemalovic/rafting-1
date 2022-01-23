@@ -16,9 +16,6 @@
     height: 100%;
     @include grid-center-6;
     grid-template-columns: repeat(5, 1fr);
-    // display: flex;
-    // justify-content: space-around;
-    // padding: 5rem;
     border-top: 1px solid $color-grey-light-1;
 
     @media only screen and (max-width: $bp-3-5) {
@@ -47,7 +44,6 @@
     margin-top: 3rem;
     border-radius: 50%;
     cursor: pointer;
-    // margin: 0 2rem;
     
     transition: $transition-1;
 

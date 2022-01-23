@@ -97,17 +97,15 @@
  }
 }
 
-
 // SECTION FEATURES 
 
 .features {
   grid-column: 1 / -1;
   background-image: linear-gradient(to right bottom, rgba($color-green-light, 0.8), rgba($color-green-dark, 0.8)),url(../img/rafting-1-18.jpg);
-  // background-image: linear-gradient(to right bottom, rgba($color-blue-light, 0.8), rgba($color-blue-dark, 0.8)),url(../img/rafting-1-1.jpg);
   background-size: cover;
   background-position: center;
-  -webkit-clip-path: polygon(0 13%, 100% 0, 100% 87%, 0 100%);
   clip-path: polygon(0 13%, 100% 0, 100% 87%, 0 100%);
+  -webkit-clip-path: polygon(0 13%, 100% 0, 100% 87%, 0 100%);
   display: grid;
   grid-template-columns: repeat(4, minmax(25rem, 1fr));
   grid-gap: 6rem;
@@ -121,8 +119,8 @@
   @media only screen and (max-width: $bp-3) {
     grid-template-columns: repeat(auto-fit, minmax(35rem, 1fr));
     padding: 15rem 5rem;
-    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
     clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+    -webkit-clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
   }
 
   @media only screen and (max-width: $bp-3-3) {
@@ -130,8 +128,8 @@
   }
 
   @media only screen and (max-width: $bp-3-5) {
-    -webkit-clip-path: polygon(0 2.5%, 100% 0, 100% 97.5%, 0 100%);
     clip-path: polygon(0 2.5%, 100% 0, 100% 97.5%, 0 100%);
+    -webkit-clip-path: polygon(0 2.5%, 100% 0, 100% 97.5%, 0 100%);
     grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     padding: 15rem 5vw;
   }
@@ -142,11 +140,9 @@
   }
 }
 
-
 // SECTION CARDS 
 
 .cards {
-  // background-color: $color-green-light;
   grid-column: 1 / -1;
   display: grid;
   grid-template-columns: repeat(3, minmax(35rem, 1fr));
@@ -174,7 +170,6 @@
   }
 }
 
-
 // SECTION REVIEWS 
 
 .reviews {
@@ -185,7 +180,6 @@
   position: relative;
 }
 
-
 // SECTION GALLERY 
 
 .gallery-box {
@@ -194,7 +188,6 @@
 }
 
 .gallery {
-  // background-color: $color-grey;
   @include grid-center-5;
   grid-template-columns: repeat(6, 1fr);
   grid-template-rows: repeat(5, 5vw);
@@ -270,7 +263,6 @@
     }
   }
 }
-
 
 // SECTION BOOKING 
 
